@@ -1,0 +1,52 @@
+{
+  "letters": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "methods": [
+    "DMP",
+    "ProMP",
+    "GP",
+    "KMP",
+    "U-KMP"
+  ],
+  "scenarios": [
+    "reproduction",
+    "missing",
+    "obstacle"
+  ],
+  "folds": 5,
+  "seed": 42,
+  "points": 200,
+  "duration": 0.995,
+  "smoothing_window": 11,
+  "smoothing_order": 3,
+  "missing_start": 0.4,
+  "missing_end": 0.6,
+  "observed_points": 20,
+  "observation_variance": 1e-05,
+  "obstacle_radius_fraction": 0.07,
+  "obstacle_margin_fraction": 0.02,
+  "obstacle_repair_steps": 8,
+  "goal_tolerance_fraction": 0.03,
+  "timing_repeats": 3,
+  "fold_limit": null,
+  "save_predictions": true,
+  "control_ablation": true,
+  "model": {
+    "basis_functions": 40,
+    "ridge": 1e-05,
+    "length_scale": 0.1,
+    "gp_noise_variance": 0.02,
+    "gmm_components": 8,
+    "reference_points": 200,
+    "kmp_mean_regularization": 0.1,
+    "kmp_covariance_regularization": 200
+  }
+}

@@ -1,0 +1,4327 @@
+[
+  {
+    "letter": "A",
+    "fold": 0,
+    "train_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9
+    ],
+    "test_indices": [
+      1,
+      8
+    ],
+    "scaler": {
+      "mean": [
+        0.5738735257496806,
+        -1.596844008067615
+      ],
+      "scale": [
+        3.9761105279642597,
+        3.622499126132972
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0025,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 34,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.5,
+          1.765254609153999e-16,
+          2.7530061563751927e-17,
+          3.056193655289479,
+          1.6786843054684522
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          0.9999999999999991,
+          0.9999999999999996,
+          10.687972954254356,
+          12.43325422585444
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 34,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.5,
+          1.765254609153999e-16,
+          2.7530061563751927e-17,
+          3.056193655289479,
+          1.6786843054684522
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          0.9999999999999991,
+          0.9999999999999996,
+          10.687972954254356,
+          12.43325422585444
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "A",
+    "fold": 1,
+    "train_indices": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9
+    ],
+    "test_indices": [
+      0,
+      5
+    ],
+    "scaler": {
+      "mean": [
+        0.8076442091724461,
+        -1.5131492968856426
+      ],
+      "scale": [
+        3.968312353270052,
+        3.5965270528187245
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0025,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 20,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.5,
+          -6.203371150093062e-17,
+          -6.658909534884572e-16,
+          3.1138942999143944,
+          1.6853002979444778
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          0.9999999999999998,
+          1.0000000000000007,
+          10.75099895070162,
+          12.537512713069773
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 20,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.5,
+          -6.203371150093062e-17,
+          -6.658909534884572e-16,
+          3.1138942999143944,
+          1.6853002979444778
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          0.9999999999999998,
+          1.0000000000000007,
+          10.75099895070162,
+          12.537512713069773
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "A",
+    "fold": 2,
+    "train_indices": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9
+    ],
+    "test_indices": [
+      2,
+      7
+    ],
+    "scaler": {
+      "mean": [
+        0.6245083129240954,
+        -1.601891983517971
+      ],
+      "scale": [
+        4.003818954590257,
+        3.6253223486942416
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0025,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 17,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.5,
+          3.7470027081099033e-16,
+          2.0469737016526323e-18,
+          3.073708550254029,
+          1.7376595988730086
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          1.0,
+          1.0000000000000007,
+          10.600728382182126,
+          12.35007638922587
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 17,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.5,
+          3.7470027081099033e-16,
+          2.0469737016526323e-18,
+          3.073708550254029,
+          1.7376595988730086
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          1.0,
+          1.0000000000000007,
+          10.600728382182126,
+          12.35007638922587
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "A",
+    "fold": 3,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8
+    ],
+    "test_indices": [
+      4,
+      9
+    ],
+    "scaler": {
+      "mean": [
+        0.7635217919257012,
+        -1.6250132256256142
+      ],
+      "scale": [
+        3.953576274228981,
+        3.6470725145876233
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0025,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 17,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.5,
+          5.0515147620444624e-17,
+          1.536531318846457e-16,
+          3.0487014809638264,
+          1.6848410829757627
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          1.0,
+          1.000000000000001,
+          10.668585689640462,
+          12.37481708440907
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 17,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.5,
+          5.0515147620444624e-17,
+          1.536531318846457e-16,
+          3.0487014809638264,
+          1.6848410829757627
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          1.0,
+          1.000000000000001,
+          10.668585689640462,
+          12.37481708440907
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "A",
+    "fold": 4,
+    "train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9
+    ],
+    "test_indices": [
+      3,
+      6
+    ],
+    "scaler": {
+      "mean": [
+        0.719446839875938,
+        -1.6173854108793366
+      ],
+      "scale": [
+        3.973964936508184,
+        3.6332393934414986
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0025,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 19,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.5,
+          5.842548667089886e-17,
+          -7.679620828149326e-17,
+          3.055915038276045,
+          1.6660370367346997
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          0.9999999999999992,
+          0.9999999999999998,
+          10.761559416337501,
+          12.377598165295517
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 19,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.5,
+          5.842548667089886e-17,
+          -7.679620828149326e-17,
+          3.055915038276045,
+          1.6660370367346997
+        ],
+        "standardization_scale": [
+          0.2901221368171633,
+          0.9999999999999992,
+          0.9999999999999998,
+          10.761559416337501,
+          12.377598165295517
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "B",
+    "fold": 0,
+    "train_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      11
+    ],
+    "test_indices": [
+      0,
+      9,
+      10
+    ],
+    "scaler": {
+      "mean": [
+        -1.2388897656641684,
+        -0.9619337931740065
+      ],
+      "scale": [
+        5.28206946634365,
+        5.964224359438371
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0022222222222222222,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 25,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.5,
+          -2.2728732476353897e-16,
+          3.8302694349567903e-16,
+          0.4399887765657786,
+          0.03691703563453088
+        ],
+        "standardization_scale": [
+          0.29012213681716326,
+          0.9999999999999994,
+          0.9999999999999994,
+          12.49771520330827,
+          9.191668275797905
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 25,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.5,
+          -2.2728732476353897e-16,
+          3.8302694349567903e-16,
+          0.4399887765657786,
+          0.03691703563453088
+        ],
+        "standardization_scale": [
+          0.29012213681716326,
+          0.9999999999999994,
+          0.9999999999999994,
+          12.49771520330827,
+          9.191668275797905
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "B",
+    "fold": 1,
+    "train_indices": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11
+    ],
+    "test_indices": [
+      2,
+      5,
+      8
+    ],
+    "scaler": {
+      "mean": [
+        -1.3832553596048716,
+        -0.9479545046406911
+      ],
+      "scale": [
+        5.194670647111994,
+        5.966417670604045
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0022222222222222222,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 19,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.5,
+          4.1547012743750304e-16,
+          1.6554658878299556e-16,
+          0.3960576237037399,
+          0.04263122954270008
+        ],
+        "standardization_scale": [
+          0.29012213681716326,
+          0.9999999999999992,
+          1.0000000000000002,
+          12.471585932481204,
+          9.156932047031066
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 19,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.5,
+          4.1547012743750304e-16,
+          1.6554658878299556e-16,
+          0.3960576237037399,
+          0.04263122954270008
+        ],
+        "standardization_scale": [
+          0.29012213681716326,
+          0.9999999999999992,
+          1.0000000000000002,
+          12.471585932481204,
+          9.156932047031066
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "B",
+    "fold": 2,
+    "train_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "test_indices": [
+      1,
+      11
+    ],
+    "scaler": {
+      "mean": [
+        -1.2874097052897167,
+        -1.0629708163374887
+      ],
+      "scale": [
+        5.205557348478427,
+        6.021235135832229
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.002,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 19,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.5,
+          -2.367550600013146e-16,
+          1.63202784619898e-17,
+          0.44752563014962743,
+          0.02976427147395965
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          1.0000000000000002,
+          1.0000000000000007,
+          12.66953281682949,
+          9.196440042329073
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 19,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.5,
+          -2.367550600013146e-16,
+          1.63202784619898e-17,
+          0.44752563014962743,
+          0.02976427147395965
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          1.0000000000000002,
+          1.0000000000000007,
+          12.66953281682949,
+          9.196440042329073
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "B",
+    "fold": 3,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11
+    ],
+    "test_indices": [
+      4,
+      7
+    ],
+    "scaler": {
+      "mean": [
+        -1.5006161099186859,
+        -0.9359288995866711
+      ],
+      "scale": [
+        5.233808943009159,
+        6.036822863621189
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.002,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 34,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.5,
+          -3.9990233346998137e-16,
+          7.471800955727304e-17,
+          0.4012890177111048,
+          0.029988955350459243
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999999,
+          1.0000000000000007,
+          12.609473437647972,
+          9.073667436240905
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 34,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.5,
+          -3.9990233346998137e-16,
+          7.471800955727304e-17,
+          0.4012890177111048,
+          0.029988955350459243
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999999,
+          1.0000000000000007,
+          12.609473437647972,
+          9.073667436240905
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "B",
+    "fold": 4,
+    "train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "test_indices": [
+      3,
+      6
+    ],
+    "scaler": {
+      "mean": [
+        -1.3951630171844487,
+        -1.0494048410753896
+      ],
+      "scale": [
+        5.208527216180029,
+        6.023758740652427
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.002,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 37,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.5,
+          -3.1663560662309463e-16,
+          7.183142969324763e-17,
+          0.4186226519694129,
+          0.03598829081032909
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999994,
+          1.0,
+          12.666998301349107,
+          9.19550961894547
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 37,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.5,
+          -3.1663560662309463e-16,
+          7.183142969324763e-17,
+          0.4186226519694129,
+          0.03598829081032909
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999994,
+          1.0,
+          12.666998301349107,
+          9.19550961894547
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "C",
+    "fold": 0,
+    "train_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13
+    ],
+    "test_indices": [
+      0,
+      9,
+      11
+    ],
+    "scaler": {
+      "mean": [
+        0.6313342720075864,
+        -0.5475160511340016
+      ],
+      "scale": [
+        5.845447047942319,
+        6.206202768482288
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 14,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.4999999999999998,
+          1.7026784023114901e-16,
+          1.461457217870206e-16,
+          -0.04371307299431185,
+          -2.4044523298710088
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000002,
+          1.0,
+          6.644462720714475,
+          2.9319226795874096
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 14,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.4999999999999998,
+          1.7026784023114901e-16,
+          1.461457217870206e-16,
+          -0.04371307299431185,
+          -2.4044523298710088
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000002,
+          1.0,
+          6.644462720714475,
+          2.9319226795874096
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "C",
+    "fold": 1,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      13
+    ],
+    "test_indices": [
+      5,
+      8,
+      12
+    ],
+    "scaler": {
+      "mean": [
+        0.7765511965912266,
+        -0.3318940610465007
+      ],
+      "scale": [
+        5.799766830960355,
+        6.241592113839256
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 14,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.4999999999999998,
+          -5.004077960083205e-16,
+          2.1296096199628e-17,
+          -0.01294818414760828,
+          -2.391285779551299
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000002,
+          0.9999999999999993,
+          6.631869761322476,
+          2.854606335802373
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 14,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.4999999999999998,
+          -5.004077960083205e-16,
+          2.1296096199628e-17,
+          -0.01294818414760828,
+          -2.391285779551299
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000002,
+          0.9999999999999993,
+          6.631869761322476,
+          2.854606335802373
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "C",
+    "fold": 2,
+    "train_indices": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "test_indices": [
+      1,
+      2,
+      13
+    ],
+    "scaler": {
+      "mean": [
+        0.5218827839548541,
+        -0.3035578322512985
+      ],
+      "scale": [
+        5.859642773322896,
+        6.190621563661493
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 18,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.4999999999999998,
+          -9.08364292875128e-18,
+          -3.734386537375527e-18,
+          -0.014354858820674705,
+          -2.3875164211070112
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000016,
+          0.9999999999999998,
+          6.594620989199178,
+          2.8676183464909855
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 18,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.4999999999999998,
+          -9.08364292875128e-18,
+          -3.734386537375527e-18,
+          -0.014354858820674705,
+          -2.3875164211070112
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000016,
+          0.9999999999999998,
+          6.594620989199178,
+          2.8676183464909855
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "C",
+    "fold": 3,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13
+    ],
+    "test_indices": [
+      4,
+      7,
+      10
+    ],
+    "scaler": {
+      "mean": [
+        0.578928367762185,
+        -0.5059064317640014
+      ],
+      "scale": [
+        5.9294923127805115,
+        6.218121692073464
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 20,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          -1.5270613056889653e-16,
+          1.5856003378964736e-16,
+          -0.04495323924998899,
+          -2.4069275073501797
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000002,
+          0.9999999999999998,
+          6.662900494071268,
+          2.8562061879881733
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 20,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          -1.5270613056889653e-16,
+          1.5856003378964736e-16,
+          -0.04495323924998899,
+          -2.4069275073501797
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000002,
+          0.9999999999999998,
+          6.662900494071268,
+          2.8562061879881733
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "C",
+    "fold": 4,
+    "train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "test_indices": [
+      3,
+      6
+    ],
+    "scaler": {
+      "mean": [
+        0.5637969255366408,
+        -0.5273228075421463
+      ],
+      "scale": [
+        5.95164501416498,
+        6.154576350745239
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0016666666666666668,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 36,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.49999999999999983,
+          -5.504855830433068e-17,
+          1.6329530320528345e-16,
+          -0.024101581086801622,
+          -2.4202213554197587
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999998,
+          1.0000000000000002,
+          6.652107144121107,
+          2.8619240883573247
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 36,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.49999999999999983,
+          -5.504855830433068e-17,
+          1.6329530320528345e-16,
+          -0.024101581086801622,
+          -2.4202213554197587
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999998,
+          1.0000000000000002,
+          6.652107144121107,
+          2.8619240883573247
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "D",
+    "fold": 0,
+    "train_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13
+    ],
+    "test_indices": [
+      0,
+      9,
+      11
+    ],
+    "scaler": {
+      "mean": [
+        -1.6505805205734783,
+        -1.0998775014540865
+      ],
+      "scale": [
+        5.303921592908788,
+        6.036705377753087
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 31,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.4999999999999998,
+          -6.730727086790012e-16,
+          -1.0597583416876495e-16,
+          0.5897452874260979,
+          0.1502785310399108
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.999999999999999,
+          0.9999999999999998,
+          7.930615296166939,
+          7.405066352324701
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 31,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.4999999999999998,
+          -6.730727086790012e-16,
+          -1.0597583416876495e-16,
+          0.5897452874260979,
+          0.1502785310399108
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.999999999999999,
+          0.9999999999999998,
+          7.930615296166939,
+          7.405066352324701
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "D",
+    "fold": 1,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      13
+    ],
+    "test_indices": [
+      5,
+      8,
+      12
+    ],
+    "scaler": {
+      "mean": [
+        -1.614633758962704,
+        -1.1117455330760915
+      ],
+      "scale": [
+        5.224743963334504,
+        6.117807753644989
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 31,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.4999999999999998,
+          -7.403168986932294e-16,
+          6.948986840494729e-17,
+          0.5859024303856223,
+          0.13515732111635237
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999989,
+          1.0000000000000007,
+          8.028843773704226,
+          7.473590417704172
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 31,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.4999999999999998,
+          -7.403168986932294e-16,
+          6.948986840494729e-17,
+          0.5859024303856223,
+          0.13515732111635237
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999989,
+          1.0000000000000007,
+          8.028843773704226,
+          7.473590417704172
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "D",
+    "fold": 2,
+    "train_indices": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "test_indices": [
+      1,
+      2,
+      13
+    ],
+    "scaler": {
+      "mean": [
+        -1.7068039131184292,
+        -1.101117667421133
+      ],
+      "scale": [
+        5.134512534084975,
+        6.030133318157514
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 28,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.4999999999999998,
+          -5.912946899787709e-16,
+          -4.7436801961256686e-17,
+          0.6106515142229693,
+          0.14151754304499
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999984,
+          1.0000000000000004,
+          8.032530041645444,
+          7.55044448394147
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 28,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.4999999999999998,
+          -5.912946899787709e-16,
+          -4.7436801961256686e-17,
+          0.6106515142229693,
+          0.14151754304499
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999984,
+          1.0000000000000004,
+          8.032530041645444,
+          7.55044448394147
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "D",
+    "fold": 3,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13
+    ],
+    "test_indices": [
+      4,
+      7,
+      10
+    ],
+    "scaler": {
+      "mean": [
+        -1.6924548656014908,
+        -1.0691211616007887
+      ],
+      "scale": [
+        5.1781919764505995,
+        6.030905663824789
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 31,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          -7.910591373868928e-16,
+          -1.7899823037933774e-16,
+          0.5434467975761893,
+          0.15310332695554507
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0,
+          1.0000000000000013,
+          7.971434901468945,
+          7.459283644395312
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 31,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          -7.910591373868928e-16,
+          -1.7899823037933774e-16,
+          0.5434467975761893,
+          0.15310332695554507
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0,
+          1.0000000000000013,
+          7.971434901468945,
+          7.459283644395312
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "D",
+    "fold": 4,
+    "train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "test_indices": [
+      3,
+      6
+    ],
+    "scaler": {
+      "mean": [
+        -1.6638165967863867,
+        -1.1841168636456976
+      ],
+      "scale": [
+        5.2377600173430645,
+        5.9760383901044225
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0016666666666666668,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 33,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.49999999999999983,
+          -4.278521981149197e-16,
+          6.892634611214513e-18,
+          0.5869214452404692,
+          0.14392417825862538
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000004,
+          0.9999999999999982,
+          8.017255596904187,
+          7.503015623302445
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 33,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.49999999999999983,
+          -4.278521981149197e-16,
+          6.892634611214513e-18,
+          0.5869214452404692,
+          0.14392417825862538
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000004,
+          0.9999999999999982,
+          8.017255596904187,
+          7.503015623302445
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "E",
+    "fold": 0,
+    "train_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13,
+      14
+    ],
+    "test_indices": [
+      0,
+      9,
+      11
+    ],
+    "scaler": {
+      "mean": [
+        -0.2999768938164474,
+        -0.08739817778354282
+      ],
+      "scale": [
+        5.25102574136274,
+        5.154853204513185
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0016666666666666668,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 22,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.49999999999999983,
+          6.198745220823791e-17,
+          -7.716050021144837e-17,
+          -0.12492850732184012,
+          -2.9651366297541895
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000009,
+          1.0000000000000004,
+          12.576320387846147,
+          3.2514053004928347
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 22,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.49999999999999983,
+          6.198745220823791e-17,
+          -7.716050021144837e-17,
+          -0.12492850732184012,
+          -2.9651366297541895
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000009,
+          1.0000000000000004,
+          12.576320387846147,
+          3.2514053004928347
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "E",
+    "fold": 1,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      14
+    ],
+    "test_indices": [
+      5,
+      8,
+      13
+    ],
+    "scaler": {
+      "mean": [
+        -0.16860442866704123,
+        -0.17799792538968515
+      ],
+      "scale": [
+        5.284247150811082,
+        5.221973794822179
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0016666666666666668,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 16,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.49999999999999983,
+          4.977499893736118e-17,
+          -6.605826996519681e-17,
+          -0.1444864034675611,
+          -2.956129899532589
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000009,
+          1.0000000000000009,
+          12.579995713594982,
+          3.3557726026533903
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 16,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.49999999999999983,
+          4.977499893736118e-17,
+          -6.605826996519681e-17,
+          -0.1444864034675611,
+          -2.956129899532589
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000009,
+          1.0000000000000009,
+          12.579995713594982,
+          3.3557726026533903
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "E",
+    "fold": 2,
+    "train_indices": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "test_indices": [
+      1,
+      2,
+      14
+    ],
+    "scaler": {
+      "mean": [
+        -0.2691272368413362,
+        -0.06111992692416462
+      ],
+      "scale": [
+        5.235503203841301,
+        5.183041462408497
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0016666666666666668,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 18,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.49999999999999983,
+          5.865678313436244e-17,
+          4.2836105033453953e-17,
+          -0.1501863191467061,
+          -2.942125813199443
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999999,
+          0.9999999999999993,
+          12.571031217045316,
+          3.2568920718369223
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 18,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.49999999999999983,
+          5.865678313436244e-17,
+          4.2836105033453953e-17,
+          -0.1501863191467061,
+          -2.942125813199443
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999999,
+          0.9999999999999993,
+          12.571031217045316,
+          3.2568920718369223
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "E",
+    "fold": 3,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14
+    ],
+    "test_indices": [
+      4,
+      7,
+      10
+    ],
+    "scaler": {
+      "mean": [
+        -0.24476607182194846,
+        -0.14492724245760263
+      ],
+      "scale": [
+        5.274663503684184,
+        5.182287301636146
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0016666666666666668,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 18,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.49999999999999983,
+          4.0893214740359934e-17,
+          2.905083581102493e-17,
+          -0.16509190608138172,
+          -2.9517307091223812
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999999,
+          0.9999999999999998,
+          12.576216590413278,
+          3.405813527346313
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 18,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.49999999999999983,
+          4.0893214740359934e-17,
+          2.905083581102493e-17,
+          -0.16509190608138172,
+          -2.9517307091223812
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999999,
+          0.9999999999999998,
+          12.576216590413278,
+          3.405813527346313
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "E",
+    "fold": 4,
+    "train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13,
+      14
+    ],
+    "test_indices": [
+      3,
+      6,
+      12
+    ],
+    "scaler": {
+      "mean": [
+        -0.2334453941795635,
+        -0.1507584586348865
+      ],
+      "scale": [
+        5.251831165219664,
+        5.1376185882160055
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0016666666666666668,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 36,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.49999999999999983,
+          -1.6616337935223175e-16,
+          -5.116277771814263e-17,
+          -0.17248000424016213,
+          -2.9432651382284525
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999989,
+          1.0,
+          12.545145833400438,
+          3.406912692727879
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 36,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.49999999999999983,
+          -1.6616337935223175e-16,
+          -5.116277771814263e-17,
+          -0.17248000424016213,
+          -2.9432651382284525
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999989,
+          1.0,
+          12.545145833400438,
+          3.406912692727879
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "F",
+    "fold": 0,
+    "train_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13
+    ],
+    "test_indices": [
+      0,
+      9,
+      11
+    ],
+    "scaler": {
+      "mean": [
+        -0.7449281624270372,
+        3.33768676496119
+      ],
+      "scale": [
+        4.538781571611766,
+        4.77112751470648
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 23,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.4999999999999998,
+          -1.48971744031521e-16,
+          -8.886830665295003e-17,
+          2.371850294659806,
+          1.792042104877203
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999997,
+          1.0000000000000002,
+          10.985520885625995,
+          8.80585975377053
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 23,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.4999999999999998,
+          -1.48971744031521e-16,
+          -8.886830665295003e-17,
+          2.371850294659806,
+          1.792042104877203
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999997,
+          1.0000000000000002,
+          10.985520885625995,
+          8.80585975377053
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "F",
+    "fold": 1,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      13
+    ],
+    "test_indices": [
+      5,
+      8,
+      12
+    ],
+    "scaler": {
+      "mean": [
+        -0.9212241247465485,
+        3.1467444919824517
+      ],
+      "scale": [
+        4.530041535935656,
+        4.666186000490994
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 13,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.4999999999999998,
+          3.027880976250427e-17,
+          -8.561838107177457e-16,
+          2.3486516853744637,
+          1.8211497108560353
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000018,
+          0.9999999999999991,
+          10.981570897539353,
+          8.62278707315531
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 13,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.4999999999999998,
+          3.027880976250427e-17,
+          -8.561838107177457e-16,
+          2.3486516853744637,
+          1.8211497108560353
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000018,
+          0.9999999999999991,
+          10.981570897539353,
+          8.62278707315531
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "F",
+    "fold": 2,
+    "train_indices": [
+      0,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "test_indices": [
+      1,
+      2,
+      13
+    ],
+    "scaler": {
+      "mean": [
+        -0.8807485348322983,
+        3.3207334930938517
+      ],
+      "scale": [
+        4.5240449949232255,
+        4.6609496157169445
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 29,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.4999999999999998,
+          2.55351295663786e-17,
+          5.690397648033302e-16,
+          2.3457377728827193,
+          1.8166339284604105
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.999999999999999,
+          0.9999999999999994,
+          11.062089706943233,
+          8.75774025190561
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 29,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.4999999999999998,
+          2.55351295663786e-17,
+          5.690397648033302e-16,
+          2.3457377728827193,
+          1.8166339284604105
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.999999999999999,
+          0.9999999999999994,
+          11.062089706943233,
+          8.75774025190561
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "F",
+    "fold": 3,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      11,
+      12,
+      13
+    ],
+    "test_indices": [
+      4,
+      7,
+      10
+    ],
+    "scaler": {
+      "mean": [
+        -0.9835580291336843,
+        3.2810497105877543
+      ],
+      "scale": [
+        4.625267909095302,
+        4.774348978252771
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 35,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          -8.528531416438703e-17,
+          2.397072439531588e-16,
+          2.318264516590433,
+          1.7919286767896325
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.999999999999998,
+          0.9999999999999997,
+          11.093988148722433,
+          8.6370465563688
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 35,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          -8.528531416438703e-17,
+          2.397072439531588e-16,
+          2.318264516590433,
+          1.7919286767896325
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.999999999999998,
+          0.9999999999999997,
+          11.093988148722433,
+          8.6370465563688
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "F",
+    "fold": 4,
+    "train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "test_indices": [
+      3,
+      6
+    ],
+    "scaler": {
+      "mean": [
+        -0.9761322946073983,
+        3.322673314136206
+      ],
+      "scale": [
+        4.583198063991106,
+        4.712125628572323
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0016666666666666668,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 23,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.49999999999999983,
+          -3.173387478720239e-17,
+          2.832919084501858e-16,
+          2.3233678874068793,
+          1.8130584919459898
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0,
+          0.9999999999999989,
+          11.064389699725607,
+          8.638489180534929
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 23,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.49999999999999983,
+          -3.173387478720239e-17,
+          2.832919084501858e-16,
+          2.3233678874068793,
+          1.8130584919459898
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0,
+          0.9999999999999989,
+          11.064389699725607,
+          8.638489180534929
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "G",
+    "fold": 0,
+    "train_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      12
+    ],
+    "test_indices": [
+      0,
+      9,
+      11
+    ],
+    "scaler": {
+      "mean": [
+        1.4749013118241332,
+        0.23938720073050654
+      ],
+      "scale": [
+        5.39784923046573,
+        4.896804605672157
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.002,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 13,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.5,
+          5.294931160193528e-16,
+          -2.8727020762175923e-17,
+          -1.4878495007633947,
+          -1.7522492391708453
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999999,
+          1.0000000000000007,
+          9.715122903626385,
+          7.101834591441536
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 13,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.5,
+          5.294931160193528e-16,
+          -2.8727020762175923e-17,
+          -1.4878495007633947,
+          -1.7522492391708453
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999999,
+          1.0000000000000007,
+          9.715122903626385,
+          7.101834591441536
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "G",
+    "fold": 1,
+    "train_indices": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12
+    ],
+    "test_indices": [
+      2,
+      5,
+      8
+    ],
+    "scaler": {
+      "mean": [
+        1.4028810716652238,
+        0.16242855830131453
+      ],
+      "scale": [
+        5.128235239834758,
+        4.7554862505894535
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.002,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 19,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.5,
+          1.9287349495300532e-16,
+          3.905209489118988e-17,
+          -1.5693786884022982,
+          -1.7933786293743175
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999999,
+          1.0,
+          9.942905801600409,
+          7.422717654487199
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 19,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.5,
+          1.9287349495300532e-16,
+          3.905209489118988e-17,
+          -1.5693786884022982,
+          -1.7933786293743175
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999999,
+          1.0,
+          9.942905801600409,
+          7.422717654487199
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "G",
+    "fold": 2,
+    "train_indices": [
+      0,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "test_indices": [
+      1,
+      4,
+      12
+    ],
+    "scaler": {
+      "mean": [
+        1.472123632892693,
+        0.19063355626929576
+      ],
+      "scale": [
+        5.263789134122558,
+        4.789040326250208
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.002,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 14,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.5,
+          1.0613732115416496e-16,
+          1.2052858711086856e-17,
+          -1.5209788076892683,
+          -1.779266786952654
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999992,
+          0.9999999999999986,
+          9.93483000099741,
+          7.425781972854744
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 14,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.5,
+          1.0613732115416496e-16,
+          1.2052858711086856e-17,
+          -1.5209788076892683,
+          -1.779266786952654
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          0.9999999999999992,
+          0.9999999999999986,
+          9.93483000099741,
+          7.425781972854744
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "G",
+    "fold": 3,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      11,
+      12
+    ],
+    "test_indices": [
+      7,
+      10
+    ],
+    "scaler": {
+      "mean": [
+        1.5568633935154166,
+        0.18539509393322945
+      ],
+      "scale": [
+        5.298090202319571,
+        4.798784798036792
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 63,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          3.3058152175287473e-16,
+          2.895411183539471e-17,
+          -1.4890239018809601,
+          -1.8077076181883598
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999997,
+          1.0000000000000007,
+          9.91697085372356,
+          7.412960648872973
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 63,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          3.3058152175287473e-16,
+          2.895411183539471e-17,
+          -1.4890239018809601,
+          -1.8077076181883598
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999997,
+          1.0000000000000007,
+          9.91697085372356,
+          7.412960648872973
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "G",
+    "fold": 4,
+    "train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "test_indices": [
+      3,
+      6
+    ],
+    "scaler": {
+      "mean": [
+        1.5078067639264692,
+        0.15814479316549745
+      ],
+      "scale": [
+        5.234171097891837,
+        4.775157657853033
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 32,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.4999999999999998,
+          4.314730391156858e-17,
+          -1.2969423514939329e-17,
+          -1.529475249923023,
+          -1.799344959219926
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000007,
+          0.999999999999999,
+          9.968811057936838,
+          7.345663393438657
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 32,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.4999999999999998,
+          4.314730391156858e-17,
+          -1.2969423514939329e-17,
+          -1.529475249923023,
+          -1.799344959219926
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.0000000000000007,
+          0.999999999999999,
+          9.968811057936838,
+          7.345663393438657
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "H",
+    "fold": 0,
+    "train_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      12
+    ],
+    "test_indices": [
+      0,
+      9,
+      11
+    ],
+    "scaler": {
+      "mean": [
+        0.42941057141296174,
+        0.2406025853357563
+      ],
+      "scale": [
+        5.309145219802978,
+        5.173551771066138
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.002,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 11,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.5,
+          1.0658141036401503e-17,
+          9.992007221626409e-17,
+          2.123504388828173,
+          -0.032998155002818184
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          1.0000000000000009,
+          1.000000000000001,
+          5.943900385407572,
+          12.616923100179466
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 11,
+        "gmm_seed": 42,
+        "standardization_mean": [
+          0.5,
+          1.0658141036401503e-17,
+          9.992007221626409e-17,
+          2.123504388828173,
+          -0.032998155002818184
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          1.0000000000000009,
+          1.000000000000001,
+          5.943900385407572,
+          12.616923100179466
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "H",
+    "fold": 1,
+    "train_indices": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12
+    ],
+    "test_indices": [
+      2,
+      5,
+      8
+    ],
+    "scaler": {
+      "mean": [
+        0.32169263305489754,
+        0.3390470549554989
+      ],
+      "scale": [
+        5.323032205924625,
+        5.225037078309083
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.002,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 13,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.5,
+          -8.021361352916756e-17,
+          1.1768364061026659e-17,
+          2.1180978116385707,
+          -0.05409891144272659
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          1.0000000000000009,
+          1.0000000000000007,
+          5.911368731109882,
+          12.596859297109065
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 13,
+        "gmm_seed": 43,
+        "standardization_mean": [
+          0.5,
+          -8.021361352916756e-17,
+          1.1768364061026659e-17,
+          2.1180978116385707,
+          -0.05409891144272659
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          1.0000000000000009,
+          1.0000000000000007,
+          5.911368731109882,
+          12.596859297109065
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "H",
+    "fold": 2,
+    "train_indices": [
+      0,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "test_indices": [
+      1,
+      4,
+      12
+    ],
+    "scaler": {
+      "mean": [
+        0.21032195227849435,
+        0.40958685262786443
+      ],
+      "scale": [
+        5.311198788764666,
+        5.1659055525802415
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.002,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 43,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.5,
+          -2.1149748619109232e-17,
+          -8.293365993949919e-17,
+          2.119182440928511,
+          -0.05362827951546403
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          1.0,
+          0.999999999999999,
+          5.826599795777405,
+          12.573835739920588
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 43,
+        "gmm_seed": 44,
+        "standardization_mean": [
+          0.5,
+          -2.1149748619109232e-17,
+          -8.293365993949919e-17,
+          2.119182440928511,
+          -0.05362827951546403
+        ],
+        "standardization_scale": [
+          0.2901221368171632,
+          1.0,
+          0.999999999999999,
+          5.826599795777405,
+          12.573835739920588
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "H",
+    "fold": 3,
+    "train_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      11,
+      12
+    ],
+    "test_indices": [
+      7,
+      10
+    ],
+    "scaler": {
+      "mean": [
+        0.3545340224376508,
+        0.2832764008708813
+      ],
+      "scale": [
+        5.303745056598926,
+        5.159336101432593
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 14,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          -4.198661620400592e-17,
+          -5.3997210743132616e-17,
+          2.1172106513627496,
+          -0.047353839731452546
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999994,
+          1.0000000000000007,
+          5.799080498284991,
+          12.66504841095952
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 14,
+        "gmm_seed": 45,
+        "standardization_mean": [
+          0.4999999999999998,
+          -4.198661620400592e-17,
+          -5.3997210743132616e-17,
+          2.1172106513627496,
+          -0.047353839731452546
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          0.9999999999999994,
+          1.0000000000000007,
+          5.799080498284991,
+          12.66504841095952
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  },
+  {
+    "letter": "H",
+    "fold": 4,
+    "train_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "test_indices": [
+      3,
+      6
+    ],
+    "scaler": {
+      "mean": [
+        0.3895062415677987,
+        0.3045741113897514
+      ],
+      "scale": [
+        5.317159064460621,
+        5.253310701690903
+      ]
+    },
+    "models": {
+      "DMP": {
+        "training": "all-demo pooled least squares",
+        "integrator": "RK45"
+      },
+      "ProMP": {
+        "training": "Gaussian over all-demo basis weights",
+        "basis_functions": 40,
+        "velocity_row_weight": 0.0995
+      },
+      "GP": {
+        "training": "exact replicate compression of all training demos",
+        "noise_variance_per_demo": 0.02,
+        "effective_noise_variance": 0.0018181818181818182,
+        "hyperparameter_optimization": false
+      },
+      "KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 20,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.4999999999999998,
+          9.240083445857553e-17,
+          2.76546462497539e-17,
+          2.1149823797089966,
+          -0.05105841306808827
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.000000000000001,
+          0.9999999999999998,
+          5.810994567981866,
+          12.64232943912176
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      },
+      "U-KMP": {
+        "source": "training-fold GMM/GMR",
+        "components": 8,
+        "gmm_converged": true,
+        "gmm_iterations": 20,
+        "gmm_seed": 46,
+        "standardization_mean": [
+          0.4999999999999998,
+          9.240083445857553e-17,
+          2.76546462497539e-17,
+          2.1149823797089966,
+          -0.05105841306808827
+        ],
+        "standardization_scale": [
+          0.29012213681716315,
+          1.000000000000001,
+          0.9999999999999998,
+          5.810994567981866,
+          12.64232943912176
+        ],
+        "reference_points": 200,
+        "covariance_scale": 1.0,
+        "state_order": [
+          "px",
+          "py",
+          "vx",
+          "vy"
+        ],
+        "conditioning": "Gaussian posterior position/state observations"
+      }
+    }
+  }
+]
