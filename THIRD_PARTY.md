@@ -15,3 +15,5 @@ Research references:
 - Silvério et al. (2019), *Uncertainty-Aware Imitation Learning using Kernelized Movement Primitives*. https://arxiv.org/abs/1903.02114
 
 Third-party packages retain their own licenses. No new license or permission grant over the retained dataset or historical notebooks is inferred by this completion. The owner may add a repository license after confirming rights to those materials.
+
+The optional robot simulation uses [MuJoCo](https://github.com/google-deepmind/mujoco), under its own Apache-2.0 license. The bundled two-link teaching model uses primitive geometry defined in this repository; it contains no downloaded commercial-robot meshes or models and does not claim to reproduce a specific manufacturer's robot.

@@ -28,6 +28,13 @@ def main(argv=None):
     serve = sub.add_parser("serve", help="serve an existing run on localhost only")
     serve.add_argument("output", type=Path)
     serve.add_argument("--port", type=int, default=8000)
+    simulate = sub.add_parser("simulate", help="track a saved reproduction example with a torque-driven MuJoCo teaching arm")
+    simulate.add_argument("run", type=Path, help="learning run containing examples.json")
+    simulate.add_argument("--letter", default="G", choices=list("ABCDEFGH"))
+    simulate.add_argument("--method", default="KMP", choices=["DMP", "ProMP", "GP", "KMP", "U-KMP"])
+    simulate.add_argument("--output", type=Path)
+    simulate.add_argument("--duration", type=float, default=8.0, help="minimum simulation duration in seconds; extended to respect reference limits")
+    simulate.add_argument("--width", type=float, default=0.16, help="training-reference workspace width in meters")
     args = parser.parse_args(argv)
     try:
         if args.command == "inspect":
@@ -46,6 +53,13 @@ def main(argv=None):
             manifest = run_benchmark(config, args.data, output)
             print(f"Open {output.resolve() / 'dashboard.html'}")
             return 0 if manifest["failed_trials"] == 0 else 1
+        if args.command == "simulate":
+            from .robot import RobotConfig, simulate_robot
+            stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+            output = args.output or root / "outputs" / f"robot-{stamp}"
+            manifest = simulate_robot(args.run, output, args.letter, args.method,
+                                      RobotConfig(duration=args.duration, width=args.width))
+            return 0 if manifest["metrics"]["tracking_passed"] else 1
         if args.command == "report":
             from .reporting import make_report
             make_report(args.output)

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motion Learning Lab · 机械臂仿真</title>
+<style>
+:root{font-family:system-ui,"Microsoft YaHei",sans-serif;color:#193047;background:#f2f6fb;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0}header{background:#132d42;color:#fff;padding:27px max(24px,calc((100% - 1200px)/2));display:flex;gap:18px;align-items:center}.logo{display:grid;place-items:center;background:#bfe5dd;color:#174a47;border-radius:14px;font-weight:800;width:52px;height:52px}h1{font-size:22px;margin:0 0 4px}header p{margin:0;color:#b9cbd9;font-size:14px}.badge{margin-left:auto;padding:8px 13px;border:1px solid #72918d;border-radius:24px;white-space:nowrap;font-size:13px}
+main{max-width:1250px;padding:30px 24px 45px;margin:auto}.intro{display:flex;justify-content:space-between;gap:18px;align-items:center}h2{font-size:28px;margin:0 0 10px}.muted{color:#647b92;line-height:1.7;margin:0}.links{display:flex;gap:10px;flex-wrap:wrap}a,button,select{border:1px solid #cfdae8;color:#21415e;background:#fff;border-radius:9px;padding:10px 15px;text-decoration:none;font:inherit;font-size:14px}a:hover,button:hover{background:#e8f0f7}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #229d8b;outline-offset:3px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:25px 0}.card,.panel{border:1px solid #dbe5f0;border-radius:14px;background:#fff}.card{padding:20px}.card span{font-size:13px;color:#6b8095;display:block}.card strong{font-size:29px;display:block;margin-top:9px}.card small{font-size:14px;color:#6b8095;font-weight:500}.grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px}.panel{overflow:hidden}.panel h3{padding:18px 20px;border-bottom:1px solid #e6edf5;font-size:16px;margin:0;display:flex;justify-content:space-between;align-items:center}.panel h3 span{font-size:12px;font-weight:400;color:#6b8095}.scene{display:block;width:100%;height:400px}.error{display:block;width:100%;height:260px}.controls{display:flex;gap:12px;align-items:center;padding:16px 20px;border-top:1px solid #e6edf5}.controls input{min-width:45px;flex:1;accent-color:#168b7d}.time{font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap;min-width:80px}.legend{display:flex;gap:20px;flex-wrap:wrap;padding:4px 20px 18px;font-size:12px;color:#60758c}.legend i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:6px}.facts{padding:6px 20px 15px;font-size:13px;line-height:1.6}.facts div{display:flex;justify-content:space-between;border-bottom:1px solid #eef2f6;padding:8px 0;gap:12px}.note{margin-top:20px;border-left:4px solid #72bfb0;background:#eaf5f2;padding:16px 20px;color:#385d60;line-height:1.8;font-size:14px}.note p{margin:0}.failure{background:#fff0e8;border-color:#d99456}.footer{margin-top:18px;font-size:12px;color:#718498;line-height:1.8}
+@media(max-width:850px){.grid{grid-template-columns:1fr}.intro{align-items:flex-start;flex-direction:column}.cards{grid-template-columns:repeat(2,1fr)}header{padding:20px}.badge{font-size:11px}h1{font-size:17px}main{padding:24px 15px}h2{font-size:24px}.card strong{font-size:24px}.scene{height:340px}.controls{padding:12px;gap:8px}.controls button,.controls select{padding:9px}.panel h3{font-size:14px}}
+</style>
+</head>
+<body>
+<header><div class="logo">ML</div><div><h1>Motion Learning Lab</h1><p>机械臂动力学 · 实际模拟状态回放</p></div><span class="badge" id="status">MuJoCo 仿真</span></header>
+<main>
+<div class="intro"><div><h2 id="title">机械臂轨迹跟踪</h2><p class="muted">两关节教学机械臂 · 固定高度的平面运动 · 同一关节 PD 控制器</p></div><div class="links"><a href="robot_trace.csv" download>下载完整轨迹 CSV</a><a href="REPORT.md">查看运行报告</a></div></div>
+<div class="cards">
+<div class="card"><span>末端跟踪 RMSE</span><strong><b id="rmse">—</b> <small>mm</small></strong></div>
+<div class="card"><span>最大跟踪误差</span><strong><b id="maximum">—</b> <small>mm</small></strong></div>
+<div class="card"><span>终点误差</span><strong><b id="endpoint">—</b> <small>mm</small></strong></div>
+<div class="card"><span>峰值驱动力矩</span><strong><b id="torque">—</b> <small>N·m</small></strong></div>
+</div>
+<div class="grid">
+<section class="panel"><h3>机械臂与末端轨迹<span>俯视图 · 坐标单位 m</span></h3><canvas id="scene" class="scene" aria-label="机械臂关节、参考轨迹和实际模拟轨迹"></canvas><div class="legend"><span><i style="background:#188d79"></i>目标路径</span><span><i style="background:#4277c4"></i>MuJoCo 末端</span><span><i style="background:#263e56"></i>模拟机械臂</span></div><div class="controls"><button id="play" type="button">播放</button><input id="seek" type="range" min="0" value="0" aria-label="仿真时间"><span class="time" id="time"></span><select id="speed" aria-label="回放速度"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></div></section>
+<section class="panel"><h3>随时间变化的末端误差<span>mm</span></h3><canvas id="error" class="error" aria-label="欧氏跟踪误差随时间变化的图表"></canvas><div class="facts" id="facts"></div></section>
+</div>
+<div class="note" id="note"><p id="verdict"></p><p>这里回放的是 MuJoCo 积分产生的实际模拟状态。初始关节位于路径起点，此后通过限幅力矩驱动；结果来自完整物理采样。画面最多抽样 1,201 帧，完整数据见 CSV。</p></div>
+<p class="footer">本页验证一个已保存的轨迹复现案例。模型是教学用两关节平面臂，尚未对应真实机械臂参数。KMP 与 U-KMP 在这里使用相同规划和固定 PD，不能据此宣称不确定性感知控制优于基线。实机部署、传感器与通信影响、接触写字和障碍物场景需要另行验证。</p>
+</main>
+<script type="application/json" id="data">__ROBOT_DATA__</script>
+<script>
+"use strict";
+const D=JSON.parse(document.getElementById('data').textContent), M=D.manifest, E=M.metrics;
+const $=id=>document.getElementById(id), last=D.t.length-1, duration=D.t[last];
+$('title').textContent=`${M.source_case.letter} · ${M.source_case.method} · 机械臂仿真`;
+$('status').textContent=E.tracking_passed?'仿真跟踪通过':'仿真未达阈值';
+for(const [id,value] of [['rmse',E.tracking_rmse_m*1000],['maximum',E.max_tracking_error_m*1000],['endpoint',E.endpoint_error_m*1000],['torque',E.peak_torque_nm]])$(id).textContent=value.toFixed(3);
+const facts=[['仿真时长',`${duration.toFixed(3)} s`],['物理采样',`${E.samples.toLocaleString()} 点 · ${(1/M.config.timestep).toFixed(0)} Hz`],['最大误差阈值',`${(M.config.tracking_tolerance*1000).toFixed(1)} mm`],['接触采样数',String(E.contact_samples)],['力矩饱和比例',`${(E.saturation_fraction*100).toFixed(2)}%`],['实际关节限速检查',E.actual_limits_satisfied?'通过':'未通过']];
+for(const [label,value] of facts){const row=document.createElement('div');const left=document.createElement('span'),right=document.createElement('strong');left.textContent=label;right.textContent=value;row.append(left,right);$('facts').append(row)}
+$('verdict').textContent=E.tracking_passed?'本次仿真通过预设的跟踪误差、接触、关节位置与速度/加速度检查。':'本次仿真未通过预设标准。请结合报告检查跟踪误差、接触和关节限制，失败数据已完整保留。';
+if(!E.tracking_passed)$('note').classList.add('failure');
+$('seek').max=String(last);
+let index=0,playing=false,previous=null,playTime=0;
+function surface(canvas){const rect=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=Math.max(1,Math.round(rect.width*dpr));canvas.height=Math.max(1,Math.round(rect.height*dpr));const c=canvas.getContext('2d');c.scale(dpr,dpr);c.fillStyle='#fff';c.fillRect(0,0,rect.width,rect.height);return[c,rect.width,rect.height]}
+function line(c,points,color,width=2,dash=[]){if(!points.length)return;c.strokeStyle=color;c.lineWidth=width;c.setLineDash(dash);c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();c.setLineDash([])}
+function dot(c,p,r,color){c.fillStyle=color;c.beginPath();c.arc(p[0],p[1],r,0,2*Math.PI);c.fill()}
+function drawScene(){const[c,w,h]=surface($('scene')),scale=Math.min((w-70)/.80,(h-55)/.70),ox=w*.18,oy=h*.53;
+const xy=p=>[ox+p[0]*scale,oy-p[1]*scale];
+c.font='11px system-ui';c.fillStyle='#7d91a4';for(let v=-.3;v<=.6501;v+=.1){line(c,[[xy([v,-.3])[0],18],[xy([v,.3])[0],h-30]],'#edf2f7',1);if(v>=0&&v<=.6)c.fillText(v.toFixed(1),xy([v,0])[0]-8,h-10)}for(let v=-.3;v<=.3001;v+=.1){const py=xy([0,v])[1];line(c,[[30,py],[w-15,py]],'#edf2f7',1);c.fillText(v.toFixed(1),6,py+4)}
+line(c,D.target.map(xy),'#188d79',2,[5,4]);line(c,D.tip.slice(0,index+1).map(xy),'#4277c4',2.5);
+const base=xy([0,0]),elbow=xy(D.elbow[index]),tip=xy(D.tip[index]);
+line(c,[base,elbow,tip],'#dbe6ee',21);line(c,[base,elbow,tip],'#263e56',13);dot(c,base,13,'#263e56');dot(c,base,5,'#a6c4d0');dot(c,elbow,10,'#263e56');dot(c,elbow,4,'#bfe5dd');dot(c,tip,6,'#e28357');dot(c,xy(D.target[index]),3,'#188d79');
+c.fillStyle='#7d91a4';c.fillText('x (m)',w-45,h-10);c.fillText('y',10,15);}
+function drawError(){const[c,w,h]=surface($('error')),pad={l:46,r:18,t:20,b:30},maximum=Math.max(E.max_tracking_error_m*1000*1.15,.1),xy=(t,e)=>[pad.l+t/duration*(w-pad.l-pad.r),h-pad.b-e/maximum*(h-pad.t-pad.b)];c.font='11px system-ui';c.fillStyle='#7d91a4';for(let n=0;n<=4;n++){const value=maximum*n/4,p=xy(0,value);line(c,[[pad.l,p[1]],[w-pad.r,p[1]]],'#edf2f7',1);c.fillText(value.toFixed(2),6,p[1]+4)}for(let n=0;n<=4;n++){const t=duration*n/4;c.fillText(t.toFixed(1),xy(t,0)[0]-7,h-10)}line(c,D.t.map((t,i)=>xy(t,D.error_m[i]*1000)),'#4277c4',2);const x=xy(D.t[index],0)[0];line(c,[[x,pad.t],[x,h-pad.b]],'#dd9c68',1,[3,3]);dot(c,xy(D.t[index],D.error_m[index]*1000),4,'#e28357');c.fillText('s',w-12,h-10)}
+function draw(){$('seek').value=String(index);$('time').textContent=`${D.t[index].toFixed(2)} / ${duration.toFixed(2)} s`;drawScene();drawError()}
+function setPlaying(value){playing=value;previous=null;playTime=D.t[index];$('play').textContent=playing?'暂停':'播放'}
+$('play').addEventListener('click',()=>{if(!playing&&index===last)index=0;setPlaying(!playing);draw()});
+$('seek').addEventListener('input',()=>{index=Number($('seek').value);setPlaying(false);draw()});
+window.addEventListener('resize',draw);
+function animate(now){if(playing){if(previous!==null){playTime=Math.min(duration,playTime+Math.min((now-previous)/1000,.1)*Number($('speed').value));let next=index;while(next<last&&D.t[next+1]<=playTime)next++;index=next;if(index===last)setPlaying(false);draw()}previous=now}requestAnimationFrame(animate)}
+draw();requestAnimationFrame(animate);
+</script>
+</body>
+</html>
