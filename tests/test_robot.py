@@ -112,9 +112,9 @@ class RobotDynamicsTests(unittest.TestCase):
                 np.testing.assert_allclose(table["time_s"], trace["t"], atol=1e-12)
                 np.testing.assert_allclose(table["tip_0"], trace["tip"][:, 0], atol=1e-12)
                 np.testing.assert_allclose(table["error_m"], error, atol=1e-12)
-            saved = json.loads((output / "manifest.json").read_text())
+            saved = json.loads((output / "manifest.json").read_text(encoding="utf-8"))
             self.assertEqual(saved["model_sha256"], manifest["model_sha256"])
-            html = (output / "dashboard.html").read_text()
+            html = (output / "dashboard.html").read_text(encoding="utf-8")
             self.assertNotIn("__ROBOT_DATA__", html)
             self.assertNotIn("https://", html)
             with self.assertRaises(ValueError):
