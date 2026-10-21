@@ -30,11 +30,17 @@ def main(argv=None):
     serve.add_argument("--port", type=int, default=8000)
     simulate = sub.add_parser("simulate", help="track a saved reproduction example with a torque-driven MuJoCo teaching arm")
     simulate.add_argument("run", type=Path, help="learning run containing examples.json")
-    simulate.add_argument("--letter", default="G", choices=list("ABCDEFGH"))
+    selection = simulate.add_mutually_exclusive_group()
+    selection.add_argument("--letter", default="G", choices=list("ABCDEFGH"))
+    selection.add_argument("--letters", nargs="+", choices=list("ABCDEFGH"))
+    selection.add_argument("--all-letters", action="store_true", help="simulate A-H and create one page with a letter selector")
     simulate.add_argument("--method", default="KMP", choices=["DMP", "ProMP", "GP", "KMP", "U-KMP"])
     simulate.add_argument("--output", type=Path)
     simulate.add_argument("--duration", type=float, default=8.0, help="minimum simulation duration in seconds; extended to respect reference limits")
     simulate.add_argument("--width", type=float, default=0.16, help="training-reference workspace width in meters")
+    robot_view = sub.add_parser("robot-view", help="combine existing robot runs into one offline page with letter/method selectors")
+    robot_view.add_argument("source", type=Path, help="directory containing saved robot simulations")
+    robot_view.add_argument("--output", type=Path, help="HTML filename; defaults to SOURCE/dashboard.html")
     args = parser.parse_args(argv)
     try:
         if args.command == "inspect":
@@ -54,12 +60,20 @@ def main(argv=None):
             print(f"Open {output.resolve() / 'dashboard.html'}")
             return 0 if manifest["failed_trials"] == 0 else 1
         if args.command == "simulate":
-            from .robot import RobotConfig, simulate_robot
+            from .robot import RobotConfig, simulate_robot, simulate_robot_letters
             stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
             output = args.output or root / "outputs" / f"robot-{stamp}"
-            manifest = simulate_robot(args.run, output, args.letter, args.method,
-                                      RobotConfig(duration=args.duration, width=args.width))
+            config = RobotConfig(duration=args.duration, width=args.width)
+            if args.all_letters or args.letters:
+                letters = tuple("ABCDEFGH") if args.all_letters else tuple(args.letters)
+                manifests = simulate_robot_letters(args.run, output, letters, args.method, config)
+                return 0 if all(m["metrics"]["tracking_passed"] for m in manifests) else 1
+            manifest = simulate_robot(args.run, output, args.letter, args.method, config)
             return 0 if manifest["metrics"]["tracking_passed"] else 1
+        if args.command == "robot-view":
+            from .robot import build_robot_gallery
+            build_robot_gallery(args.source, args.output)
+            return 0
         if args.command == "report":
             from .reporting import make_report
             make_report(args.output)

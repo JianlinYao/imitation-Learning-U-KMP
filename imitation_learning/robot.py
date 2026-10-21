@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from hashlib import sha256
 import importlib.metadata
 import json
+import os
 from pathlib import Path
 import platform
 import xml.etree.ElementTree as ET
@@ -220,6 +221,7 @@ def tracking_metrics(reference, arrays, config):
 def simulate_robot(run, output, letter="G", method="KMP", config=None):
     config = config or RobotConfig()
     config.validate()
+    print(f"Starting robot simulation: {letter}/{method}", flush=True)
     try:
         import mujoco
     except ImportError as error:
@@ -262,13 +264,7 @@ def simulate_robot(run, output, letter="G", method="KMP", config=None):
         for i in range(2):
             columns[f"{name}_{i}"] = (reference if name in reference else arrays)[name][:, i]
     pd.DataFrame(columns).to_csv(output / "robot_trace.csv", index=False)
-    indices = np.unique(np.linspace(0, len(reference["t"]) - 1, min(1201, len(reference["t"])), dtype=int))
-    payload = {"manifest": manifest, "t": reference["t"][indices].tolist()}
-    payload.update({name: arrays[name][indices].tolist() for name in ("tip", "elbow", "error_m")})
-    payload["target"] = reference["target"][indices].tolist()
-    template = Path(__file__).with_name("robot_dashboard.html").read_text(encoding="utf-8")
-    embedded = json.dumps(payload, ensure_ascii=False, allow_nan=False).replace("<", "\\u003c")
-    (output / "dashboard.html").write_text(template.replace("__ROBOT_DATA__", embedded), encoding="utf-8")
+    _write_robot_page(output / "dashboard.html", _robot_payload(manifest, reference | arrays))
     _plot_tracking(output, reference, arrays)
     report = (f"# Robot simulation: {letter} / {method}\n\n"
               "MuJoCo teaching-arm dynamics simulation. This is not physical robot validation.\n\n"
@@ -292,6 +288,98 @@ def simulate_robot(run, output, letter="G", method="KMP", config=None):
           f"RMSE={metrics['tracking_rmse_m'] * 1000:.3f} mm; max={metrics['max_tracking_error_m'] * 1000:.3f} mm", flush=True)
     print(f"Open {output / 'dashboard.html'}", flush=True)
     return manifest
+
+
+def _robot_payload(manifest, trace, artifacts=None):
+    """Read the original full-rate logs; decimate only the browser display."""
+    t = np.asarray(trace["t"], dtype=float)
+    if t.ndim != 1 or len(t) < 2 or not np.isfinite(t).all() or np.any(np.diff(t) <= 0):
+        raise ValueError("robot trace must contain finite, increasing times")
+    data = {name: np.asarray(trace[name], dtype=float) for name in ("target", "tip", "elbow", "error_m")}
+    for name, array in data.items():
+        expected = (len(t),) if name == "error_m" else (len(t), 2)
+        if array.shape != expected or not np.isfinite(array).all():
+            raise ValueError(f"invalid robot trace field: {name}")
+    error = np.linalg.norm(data["tip"] - data["target"], axis=1)
+    if not np.allclose(error, data["error_m"], rtol=1e-8, atol=1e-12):
+        raise ValueError("saved robot error does not match full-rate positions")
+    metrics = manifest["metrics"]
+    if (not np.isclose(metrics["tracking_rmse_m"], np.sqrt(np.mean(error ** 2)), rtol=1e-8, atol=1e-12)
+            or not np.isclose(metrics["max_tracking_error_m"], error.max(), rtol=1e-8, atol=1e-12)):
+        raise ValueError("saved robot metrics do not match full-rate positions")
+    indices = np.unique(np.linspace(0, len(t) - 1, min(1201, len(t)), dtype=int))
+    payload = {"manifest": manifest, "t": t[indices].tolist(),
+               "artifacts": artifacts or {"csv": "robot_trace.csv", "report": "REPORT.md"}}
+    payload.update({name: array[indices].tolist() for name, array in data.items()})
+    return payload
+
+
+def _write_robot_page(path, payload):
+    template = Path(__file__).with_name("robot_dashboard.html").read_text(encoding="utf-8")
+    embedded = json.dumps(payload, ensure_ascii=False, allow_nan=False).replace("<", "\\u003c")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(template.replace("__ROBOT_DATA__", embedded), encoding="utf-8")
+
+
+def build_robot_gallery(source, output=None):
+    """Combine existing runs in one offline page, without running any physics."""
+    source = Path(source).resolve()
+    output = Path(output).resolve() if output is not None else source / "dashboard.html"
+    if output.suffix.lower() != ".html":
+        raise ValueError("gallery output must be an HTML filename")
+    cases, seen, records = [], set(), []
+    for path in sorted(source.rglob("manifest.json")):
+        manifest = json.loads(path.read_text(encoding="utf-8"))
+        if manifest.get("robot") != "educational_planar_2r":
+            continue
+        identity = manifest["source_case"]
+        key = (identity["letter"], identity["method"])
+        if key in seen:
+            raise ValueError(f"duplicate robot case {key[0]}/{key[1]}; choose a directory with one run per case")
+        seen.add(key)
+        folder = path.parent
+        def artifact(name):
+            target = folder / name
+            if not target.is_file():
+                raise ValueError(f"missing robot artifact: {target}")
+            try:
+                return Path(os.path.relpath(target, output.parent)).as_posix()
+            except ValueError:  # explicit output on another Windows drive
+                return target.as_uri()
+        artifacts = {"csv": artifact("robot_trace.csv"), "report": artifact("REPORT.md")}
+        trace_path = folder / "robot_trace.npz"
+        with np.load(trace_path, allow_pickle=False) as trace:
+            cases.append(_robot_payload(manifest, trace, artifacts))
+        records.append({"letter": key[0], "method": key[1],
+                        "manifest_sha256": sha256(path.read_bytes()).hexdigest(),
+                        "trace_sha256": sha256(trace_path.read_bytes()).hexdigest()})
+    if not cases:
+        raise ValueError(f"no saved robot simulation traces found in {source}")
+    cases.sort(key=lambda case: (case["manifest"]["source_case"]["letter"],
+                                METHODS.index(case["manifest"]["source_case"]["method"])))
+    _write_robot_page(output, {"cases": cases})
+    print(f"Combined {len(cases)} robot cases into {output}", flush=True)
+    return {"cases": records, "letters": sorted({key[0] for key in seen}),
+            "all_tracking_passed": all(case["manifest"]["metrics"]["tracking_passed"] for case in cases)}
+
+
+def simulate_robot_letters(run, output, letters=tuple("ABCDEFGH"), method="KMP", config=None):
+    config = config or RobotConfig()
+    config.validate()
+    run, output = Path(run).resolve(), Path(output).resolve()
+    if not letters or len(set(letters)) != len(letters):
+        raise ValueError("choose at least one letter, without duplicates")
+    if output.exists() and any(output.iterdir()):
+        raise ValueError(f"output is not empty: {output}; choose a new simulation directory")
+    for letter in letters:
+        load_robot_case(run, letter, method)  # reject missing inputs before starting
+    manifests = []
+    for index, letter in enumerate(letters, 1):
+        print(f"Robot case {index}/{len(letters)}: {letter}/{method}", flush=True)
+        manifests.append(simulate_robot(run, output / letter, letter, method, config))
+    build_robot_gallery(output)
+    print(f"Open {output / 'dashboard.html'}", flush=True)
+    return manifests
 
 
 def _plot_tracking(output, reference, arrays):

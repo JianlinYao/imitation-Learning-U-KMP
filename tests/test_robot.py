@@ -11,7 +11,7 @@ import pandas as pd
 
 from imitation_learning.robot import (RobotConfig, forward_kinematics, inverse_kinematics,
                                      load_robot_case, model_xml, prepare_reference, rollout,
-                                     simulate_robot, tracking_metrics)
+                                     simulate_robot, simulate_robot_letters, tracking_metrics)
 
 ROOT = Path(__file__).resolve().parents[1]
 HAS_MUJOCO = importlib.util.find_spec("mujoco") is not None
@@ -71,6 +71,28 @@ class RobotPreparationTests(unittest.TestCase):
 
 @unittest.skipUnless(HAS_MUJOCO, "install .[simulation] to run MuJoCo dynamics tests")
 class RobotDynamicsTests(unittest.TestCase):
+    def test_batch_generates_one_selector_page_for_real_a_b_predictions(self):
+        from imitation_learning.experiments import RunConfig, run_benchmark
+        from imitation_learning.models import ModelConfig
+        from test_robot_gallery import read_payload
+        config = RunConfig(letters=("A", "B"), methods=("KMP",), points=40, fold_limit=1,
+                           observed_points=12, timing_repeats=1,
+                           model=ModelConfig(basis_functions=18, reference_points=40,
+                                             gmm_components=3, kmp_covariance_regularization=40))
+        with tempfile.TemporaryDirectory() as folder:
+            source, output = Path(folder) / "learning", Path(folder) / "robots"
+            run_benchmark(config, ROOT / "2Dletters", source)
+            manifests = simulate_robot_letters(source, output, ("A", "B"))
+            self.assertEqual(len(manifests), 2)
+            payload = read_payload(output / "dashboard.html")
+            self.assertEqual([case["manifest"]["source_case"]["letter"] for case in payload["cases"]], ["A", "B"])
+            for case in payload["cases"]:
+                letter = case["manifest"]["source_case"]["letter"]
+                self.assertEqual(case["artifacts"]["csv"], f"{letter}/robot_trace.csv")
+                self.assertTrue((output / letter / "robot_trace.npz").is_file())
+            with self.assertRaises(ValueError):
+                simulate_robot_letters(source, output, ("A", "B"))
+
     def test_analytic_kinematics_match_mujoco_sites(self):
         import mujoco
         config = RobotConfig()

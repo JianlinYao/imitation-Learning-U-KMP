@@ -34,3 +34,11 @@ GitHub Actions additionally runs the suite and the quick experiment on Python 3.
 - New GitHub Actions jobs install simulation dependencies and run the robot checks plus a saved G-case simulation on **Ubuntu and Windows with Python 3.12**. Check their actual run status for remote results.
 
 The existing full learning benchmark was computed under the source snapshot in its original manifest. v0.3 adds the simulation stage; it does not relabel the prior 1,575 planned-path records as robot dynamics or hardware results.
+
+## Letter/method selection (v0.4)
+
+- Local learning, physics and gallery checks passed **29 tests**; the separate opt-in real-browser case requires a Chrome/Chromium executable. This environment could not download a valid browser archive, so browser interaction runs in its dedicated GitHub Actions job using the runner's installed Chrome.
+- A-H/KMP simulations were generated with the new batch command and combined into one page. All eight retained their declared tracking pass state. Existing simulation logs can also be combined without invoking MuJoCo.
+- Merge tests verify case-specific metrics and relative file links, preserve original source files, retain failed tracking cases and reject duplicate or corrupted logs. UTF-8 paths are exercised explicitly.
+- A real A/B learning run is used for the batch simulation integration test. UI fixtures in the browser test are explicitly synthetic and are not additional robot experiment results.
+- Browser CI checks actual dropdown interactions, playback reset, changing method availability, failed-to-passed status changes, download/report targets, JavaScript errors and mobile horizontal overflow. Check the corresponding workflow result before treating the browser check as passed.
