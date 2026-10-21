@@ -44,6 +44,33 @@ python -m imitation_learning serve outputs/quick --port 8000
 
 浏览器访问 `http://127.0.0.1:8000/dashboard.html`。服务只绑定本机回环地址。
 
+## 没有真实机械臂：运行 MuJoCo 物理仿真
+
+v0.3 新增带关节惯性、阻尼、力矩限幅和反馈的**两关节教学机械臂**。在 Windows / Linux 的 Python 3.12 环境中安装可选依赖：
+
+```bash
+python -m pip install -e ".[simulation]"
+python -m imitation_learning simulate outputs/full --letter A --method KMP --output outputs/robot-a
+```
+
+Windows PowerShell 打开结果：
+
+```powershell
+start .\outputs\robot-a\dashboard.html
+```
+
+如果还没有完整学习结果，可以直接使用仓库内保存的 G 案例：
+
+```bash
+python -m imitation_learning simulate examples/validated_run --letter G --method KMP --output outputs/robot-g
+```
+
+页面显示模拟机械臂的运动、参考与实际末端路径、跟踪误差及力矩饱和情况。仿真无须显示器或 OpenGL 窗口；播放使用本地浏览器。无需 ROS 即可运行此教学模型。
+
+输入是一次已保存的轨迹复现案例，不是重新训练。坐标按训练参考统一缩放成米，逆运动学得到关节轨迹，再按速度/加速度限制重新定时；默认至少 8 秒。MuJoCo 实际积分产生后续状态，固定 PD 发送限幅力矩。失败结果也保留，未达到跟踪标准时退出码为 1。
+
+这一新增阶段是**教学模型的动力学仿真**，没有对应真实厂商机械臂，也没有验证实机或 U-KMP 的不确定性感知控制效果。实现、输出单位、通过标准和实机迁移条件见 [机械臂仿真说明](docs/ROBOT_SIMULATION.md)。
+
 ## 完整实验
 
 ```bash
@@ -102,7 +129,7 @@ python -m unittest discover -s tests -v
 
 测试覆盖核导数、DMP 强迫项、GP 重复观测等价性、概率条件化、KMP 外推方差、LQR 增益、整段碰撞检测、遮挡泄漏、折划分、指标与保存预测的一致性，以及固定配置的重复运行。
 
-GitHub Actions 在 Python 3.10 和 3.12 上运行测试及快速实验。CI 产物包含快速实验的查看器和结果表。本地已通过 **16 项测试**，并完成 **1,575 条全量评测，零运行错误**。实际结果见 [已验证示例](examples/validated_run/README.md)，检查范围与限制见 [验证记录](docs/VALIDATION.md)。
+GitHub Actions 在 Python 3.10 和 3.12 上运行测试及快速实验，另在 Windows / Ubuntu 的 Python 3.12 上检查 MuJoCo 仿真。CI 产物包含查看器和结果表。原学习部分的 **16 项测试**已通过，安装仿真依赖后共 **24 项测试**通过；已完成 **1,575 条学习全量评测，零运行错误**，以及 **40 个代表路径的机械臂仿真检查**。学习结果见 [已验证示例](examples/validated_run/README.md)，检查范围与限制见 [验证记录](docs/VALIDATION.md)。
 
 ![G 的障碍适配示例](examples/validated_run/figures/trajectory_obstacle.png)
 

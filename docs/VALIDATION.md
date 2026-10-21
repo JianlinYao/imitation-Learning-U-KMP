@@ -23,3 +23,14 @@ python -m imitation_learning run --config configs/benchmark.json --output output
 Versions used for the local run are listed in `requirements-tested.txt` and the recorded manifest. Hardware-dependent timing is not expected to reproduce exactly. Numerical reproducibility is assessed under the same versions, configuration, data, seed and one-thread BLAS limit.
 
 GitHub Actions additionally runs the suite and the quick experiment on Python 3.10 and 3.12. Remote CI status is authoritative for those environments; a local pass alone is not a claim that remote checks have completed.
+
+## Optional MuJoCo simulation (v0.3)
+
+- With simulation dependencies installed, the combined suite passed **24 tests** (16 learning/protocol cases and 8 robot cases).
+- A separate dynamics sweep of the 40 representative A-H / method reproduction examples passed the declared maximum tracking error, contact, joint-position and actual velocity/acceleration criteria. This is not full robot cross-validation and is not hardware validation. Recorded summaries and configuration are in `examples/robot_validation/`.
+- A deliberately near-zero motor-torque limit produces a large tracking error, a failed criterion and preserved logs. Actual joint states are integrated by MuJoCo, not reset to the reference at each step.
+- Full-rate NPZ and CSV logs reproduce the reported Euclidean TCP errors. Independent analytic forward kinematics agrees with MuJoCo site positions.
+- A built wheel contains the XML model and both HTML templates. The generated simulation page's JSON parses and its JavaScript passes Node syntax checking. A real browser interaction test remains outside this recorded local check.
+- New GitHub Actions jobs install simulation dependencies and run the robot checks plus a saved G-case simulation on **Ubuntu and Windows with Python 3.12**. Check their actual run status for remote results.
+
+The existing full learning benchmark was computed under the source snapshot in its original manifest. v0.3 adds the simulation stage; it does not relabel the prior 1,575 planned-path records as robot dynamics or hardware results.

@@ -45,3 +45,35 @@ jobs:
             outputs/ci/figures/
           if-no-files-found: warn
           retention-days: 7
+
+  robot-simulation:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    env:
+      MPLBACKEND: Agg
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install simulation support
+        run: python -m pip install -e ".[simulation]"
+      - name: Kinematics and actual MuJoCo rollout tests
+        run: python -m unittest discover -s tests -p test_robot.py -v
+      - name: Simulate a saved learning example
+        run: python -m imitation_learning simulate examples/validated_run --letter G --method KMP --output outputs/robot-ci
+      - name: Save robot simulation results
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: robot-simulation-${{ matrix.os }}
+          path: outputs/robot-ci/
+          if-no-files-found: warn
+          retention-days: 7
