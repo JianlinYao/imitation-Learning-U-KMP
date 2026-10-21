@@ -46,6 +46,29 @@ python -m imitation_learning serve outputs/quick --port 8000
 
 ## 没有真实机械臂：运行 MuJoCo 物理仿真
 
+v0.4 支持在**同一个页面下拉切换字母**。如果已经生成了 `outputs/robot-all/A` 到 `H` 的仿真结果，直接合并已有日志：
+
+```bash
+python -m imitation_learning robot-view outputs/robot-all
+```
+
+然后打开 `outputs/robot-all/dashboard.html`。选择字母时，机械臂回放、误差指标、通过状态及 CSV/报告链接会同步更新。合并已有日志不需要重新运行物理仿真，也不需要安装 MuJoCo。
+
+如果尚未生成全部字母，可以一次运行 A–H 并自动生成选择页面：
+
+```bash
+python -m pip install -e ".[simulation]"
+python -m imitation_learning simulate outputs/full --all-letters --method KMP --output outputs/robot-switch
+```
+
+Windows 打开合并页：
+
+```powershell
+start .\outputs\robot-switch\dashboard.html
+```
+
+输出会逐个显示 `Robot case 1/8` 等进度。也可用 `--letters A B` 只运行指定字母。请使用新的仿真输出目录；页面只列出实际存在的案例。旧的单字母页面不会通过刷新自动获得其他字母，需要打开新生成的合并页。
+
 v0.3 新增带关节惯性、阻尼、力矩限幅和反馈的**两关节教学机械臂**。在 Windows / Linux 的 Python 3.12 环境中安装可选依赖：
 
 ```bash

@@ -69,11 +69,42 @@ jobs:
         run: python -m unittest discover -s tests -p test_robot.py -v
       - name: Simulate a saved learning example
         run: python -m imitation_learning simulate examples/validated_run --letter G --method KMP --output outputs/robot-ci
+      - name: Combine existing robot logs without rerunning physics
+        run: python -m imitation_learning robot-view outputs/robot-ci --output outputs/robot-ci/combined.html
       - name: Save robot simulation results
         if: always()
         uses: actions/upload-artifact@v7
         with:
           name: robot-simulation-${{ matrix.os }}
           path: outputs/robot-ci/
+          if-no-files-found: warn
+          retention-days: 7
+
+  robot-gallery-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      ROBOT_BROWSER_TESTS: '1'
+      MPLBACKEND: Agg
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install package and browser test dependency
+        run: python -m pip install -e . playwright
+      - name: Locate the runner's installed Chrome
+        run: python -c "import shutil; assert shutil.which('google-chrome') or shutil.which('chromium'), 'Chrome/Chromium is required'"
+      - name: Check letter switching, playback, metrics and download links
+        run: python -m unittest discover -s tests -p test_robot_browser.py -v
+      - name: Save browser test screenshots
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: robot-gallery-browser-fixtures
+          path: outputs/browser-tests/
           if-no-files-found: warn
           retention-days: 7

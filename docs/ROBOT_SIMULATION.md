@@ -1,6 +1,32 @@
-# 机械臂动力学仿真（v0.3）
+# 机械臂动力学仿真
 
 此阶段将已学习的二维路径交给 MuJoCo 中的教学用两关节平面机械臂。它验证坐标映射、逆运动学、时间参数化、限幅力矩控制和实际模拟状态记录。它不是实机验证，也不是经过辨识的工业机械臂数字孪生。
+
+## 同一页面切换字母（v0.4）
+
+已有按字母保存的结果，例如 `outputs/robot-all/A`、`B` 到 `H`，只需：
+
+```bash
+python -m imitation_learning robot-view outputs/robot-all
+```
+
+Windows 打开：`start .\outputs\robot-all\dashboard.html`。此命令读取保存的 `manifest.json` 和完整 `robot_trace.npz`，验证误差与指标一致，然后生成自包含的合并页面；不需要重新执行动力学，也不需要 MuJoCo 依赖。单个案例的原始日志、报告和页面保持不变。
+
+没有全部字母的仿真结果时，在安装可选依赖后一次生成：
+
+```bash
+python -m imitation_learning simulate outputs/full --all-letters --method KMP --output outputs/robot-switch
+```
+
+打开 `outputs/robot-switch/dashboard.html`，在页面的“字母”下拉框选择 A–H。`--letters A B` 可选择部分字母；`--letter B` 继续表示原来的单字母运行。三个选择参数互斥。
+
+切换会暂停播放、回到该案例起点，并同步更新全部指标、通过/失败提示、时间范围和文件下载链接。方法下拉框只提供该字母实际保存的方法；只有一种方法时禁用。切换字母时优先保留同名方法，没有则自动选择一个可用方法。
+
+合并页面只列出实际找到的案例。缺少案例、同一字母/方法有重复结果、缺少日志/报告，或保存的误差与完整位置日志不一致时会明确报错。通过完整运行但未达跟踪阈值的案例仍显示，失败状态不会被删除。
+
+`robot-view --output outputs/selector.html` 可指定 HTML 文件位置，默认重建源目录下的 `dashboard.html`。CSV 和报告通过相对链接访问，分享时请保留案例子目录。不同 Windows 盘符间输出时使用文件绝对链接，建议将合并页与案例保存在同一目录树中。
+
+批量仿真会先检查所选字母是否存在于学习结果，然后逐个输出开始和完成信息，最后生成合并页。每个字母仍只取所保存的第 0 折代表案例。仿真输出目录必须为空；读取已有结果时使用 `robot-view`。
 
 ## 安装和运行
 
@@ -79,6 +105,10 @@ python -m unittest discover -s tests -p test_robot.py -v
 ```
 
 新增 8 项测试覆盖：共享坐标映射、时间参数化、不可达/超限输入、模型与解析运动学一致性、限幅力矩对实际轨迹的影响、完整日志和指标一致性、失败保留和确定性。未安装 MuJoCo 时，4 项动力学测试跳过；安装可选依赖后均执行。
+
+v0.4 额外检查旧日志合并、UTF-8 路径、不同案例的指标/链接、重复/损坏日志和真实 A/B 预测的批量仿真。浏览器交互测试用明确标注的合成 UI 夹具检查字母/方法切换、播放重置、失败提示清除、下载目标和手机布局；夹具不作为物理实验结果。
+
+浏览器检查需安装 Playwright，使用系统 Chrome/Chromium（或设置 `ROBOT_BROWSER_EXECUTABLE`），在 `ROBOT_BROWSER_TESTS=1` 环境下运行 `python -m unittest discover -s tests -p test_robot_browser.py -v`。未选择此项时跳过浏览器测试，普通安装不添加浏览器依赖。
 
 对完整学习输出中的 A–H、五种方法各取一个代表案例，可额外执行 40 个物理仿真，并保存每个案例的完整 NPZ 日志、汇总和失败记录：
 
