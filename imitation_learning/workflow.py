@@ -5,6 +5,7 @@ import importlib.util
 import json
 from pathlib import Path
 
+from .console import log
 from .experiments import json_safe, run_benchmark, write_json
 from .robot import RobotConfig, simulate_robot_grid
 
@@ -24,7 +25,7 @@ def run_demo(config, data_root, output):
     state = {'schema_version': 1, 'status': 'running', 'request': request,
              'started_at_utc': datetime.now(timezone.utc).isoformat(), 'stage': 'learning'}
     write_json(state_path, state)
-    print('Stage 1/2: learning and held-out evaluation (completed folds are reused)', flush=True)
+    log('Stage 1/2: learning and held-out evaluation (completed folds are reused)', flush=True)
     learning = output / 'learning'
     manifest = run_benchmark(config, data_root, learning, resume=learning.exists())
     if manifest['failed_trials']:
@@ -33,7 +34,7 @@ def run_demo(config, data_root, output):
         raise RuntimeError(f"learning reported {manifest['failed_trials']} execution errors; inspect {learning / 'errors.json'}")
     state.update(stage='robot', learning_status=manifest['status'])
     write_json(state_path, state)
-    print('Stage 2/2: physics simulation; shared duration per letter; U-KMP uses covariance-aware LQR', flush=True)
+    log('Stage 2/2: physics simulation; shared duration per letter; U-KMP uses covariance-aware LQR', flush=True)
     robots = simulate_robot_grid(learning, output / 'robot', config.letters, config.methods,
                                  config=RobotConfig(controller='auto'), resume=True)
     passed = all(item['metrics']['tracking_passed'] for item in robots)
@@ -42,5 +43,5 @@ def run_demo(config, data_root, output):
                  page=str(output / 'robot' / 'dashboard.html'),
                  finished_at_utc=datetime.now(timezone.utc).isoformat())
     write_json(state_path, state)
-    print(f"Demo page: {state['page']}", flush=True)
+    log(f"Demo page: {state['page']}", flush=True)
     return state

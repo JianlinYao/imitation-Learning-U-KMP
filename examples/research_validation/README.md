@@ -44,6 +44,10 @@ over that historical table.
   environment and timestamps. Source hashes match the v0.5 implementation used
   for the calculations; the run began before its publishing commit, so its Git
   revision is the parent and the worktree is honestly recorded as dirty.
+  The matching numerical implementation was published in commit
+  `2dfcffece2451df10e11b34302804df62de8bd0a`. A subsequent Windows console
+  compatibility fix changes progress-message encoding, not these calculations;
+  the original source hashes and numerical records remain preserved.
 - `calibration_splits.json` and `calibration.json`: 40 disjoint fit/calibration/test
   partitions and 320 method/scenario calibration records.
 - `demo_robot_summary.csv` and `force_control_summary.csv`: all actual simulated

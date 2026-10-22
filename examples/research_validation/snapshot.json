@@ -26,8 +26,8 @@
       "sha256": "231a68c4875b17da718ca074c437bb672c5915be9abb271b6a1abfda425edbe7"
     },
     "README.md": {
-      "bytes": 4106,
-      "sha256": "e66b54cda33711f4f68b1d00e66a6b2ee372fa627dba6b69598f83e4ffbb647b"
+      "bytes": 4393,
+      "sha256": "f0d57e9f7879cf6b469aba93f3c5416356b1b5f52e3d3329cb7138e3c571c4b4"
     },
     "force_control_summary.csv": {
       "bytes": 5569,
@@ -49,5 +49,6 @@
       "bytes": 61043,
       "sha256": "41e65b80b4e9fc009e9082fee51a1955a1d71e2d0c5ead85f2b0b809f86088f3"
     }
-  }
+  },
+  "numerical_implementation_commit": "2dfcffece2451df10e11b34302804df62de8bd0a"
 }

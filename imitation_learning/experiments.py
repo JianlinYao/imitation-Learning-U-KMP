@@ -13,6 +13,7 @@ import numpy as np
 import pandas as pd
 from threadpoolctl import threadpool_limits
 
+from .console import log
 from .control import track_lqr
 from .data import SpatialScaler, folds, load_letter, observed_segments, resample, smooth, time_grid
 from .distributions import Observation
@@ -330,7 +331,7 @@ def run_benchmark(config: RunConfig, data_root: Path | str, output: Path | str, 
         rows, controls, saved_cases = restored["rows"], restored["controls"], restored["saved_cases"]
         split_records, errors, calibrations = restored["splits"], restored["errors"], restored["calibrations"]
         completed_folds = {tuple(item) for item in restored["completed_folds"]}
-        print(f"Resuming {len(completed_folds)} completed letter/fold groups", flush=True)
+        log(f"Resuming {len(completed_folds)} completed letter/fold groups", flush=True)
     expected_trials = sum(len(test) * len(config.methods) * len(config.scenarios)
                           for partitions in split_map.values() for _, test in partitions[:config.fold_limit])
     control_method = "KMP" if "KMP" in config.methods else "U-KMP"
@@ -342,7 +343,7 @@ def run_benchmark(config: RunConfig, data_root: Path | str, output: Path | str, 
                     continue
                 fit_indices, calibration_indices = calibration_split(
                     train_indices, config.calibration_fraction, config.seed + 1000 * fold_index + ord(letter))
-                print(f"[{letter}] fold {fold_index + 1}/{len(selected_folds)}: "
+                log(f"[{letter}] fold {fold_index + 1}/{len(selected_folds)}: "
                       f"{len(fit_indices)} fit, {len(calibration_indices)} calibration, {len(test_indices)} test", flush=True)
                 preprocessing_start = perf_counter()
                 training_raw = [smooth(resample(demos[i], t), config.smoothing_window, config.smoothing_order)
@@ -470,5 +471,5 @@ def run_benchmark(config: RunConfig, data_root: Path | str, output: Path | str, 
     write_json(output / "manifest.json", manifest)
     from .reporting import make_report
     make_report(output)
-    print(f"Saved {len(rows)} trials ({len(errors)} errors) to {output}", flush=True)
+    log(f"Saved {len(rows)} trials ({len(errors)} errors) to {output}", flush=True)
     return manifest

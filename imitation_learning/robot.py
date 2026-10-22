@@ -19,6 +19,7 @@ import numpy as np
 import pandas as pd
 from scipy.interpolate import PchipInterpolator
 
+from .console import log
 from .experiments import json_safe, write_json
 from .models import METHODS
 from .control import lqr_policy
@@ -321,7 +322,7 @@ def tracking_metrics(reference, arrays, config):
 def simulate_robot(run, output, letter="G", method="KMP", config=None):
     config = resolved_config(config or RobotConfig(), method)
     config.validate()
-    print(f"Starting robot simulation: {letter}/{method}", flush=True)
+    log(f"Starting robot simulation: {letter}/{method}", flush=True)
     try:
         import mujoco
     except ImportError as error:
@@ -402,9 +403,9 @@ def simulate_robot(run, output, letter="G", method="KMP", config=None):
               "for the full state covariance. Read error together with control effort and deflection; "
               "more compliant behavior need not minimize tracking error.\n")
     (output / "REPORT.md").write_text(report, encoding="utf-8")
-    print(f"Robot simulation: tracking_passed={metrics['tracking_passed']}; "
+    log(f"Robot simulation: tracking_passed={metrics['tracking_passed']}; "
           f"RMSE={metrics['tracking_rmse_m'] * 1000:.3f} mm; max={metrics['max_tracking_error_m'] * 1000:.3f} mm", flush=True)
-    print(f"Open {output / 'dashboard.html'}", flush=True)
+    log(f"Open {output / 'dashboard.html'}", flush=True)
     return manifest
 
 
@@ -477,7 +478,7 @@ def build_robot_gallery(source, output=None):
                                 METHODS.index(case["manifest"]["source_case"]["method"]),
                                 case["manifest"].get("controller_id", "joint_pd")))
     _write_robot_page(output, {"cases": cases})
-    print(f"Combined {len(cases)} robot cases into {output}", flush=True)
+    log(f"Combined {len(cases)} robot cases into {output}", flush=True)
     return {"cases": records, "letters": sorted({key[0] for key in seen}),
             "all_tracking_passed": all(case["manifest"]["metrics"]["tracking_passed"] for case in cases)}
 
@@ -531,7 +532,7 @@ def simulate_robot_grid(run, output, letters=tuple("ABCDEFGH"), methods=METHODS,
     manifests = []
     for number, (letter, method, cfg) in enumerate(specs, 1):
         destination = output / letter / method / cfg.controller
-        print(f"Robot grid {number}/{len(specs)}: {letter}/{method}/{cfg.controller}", flush=True)
+        log(f"Robot grid {number}/{len(specs)}: {letter}/{method}/{cfg.controller}", flush=True)
         if destination.exists():
             manifest = json.loads((destination / 'manifest.json').read_text(encoding='utf-8'))
             if (manifest.get('config') != json_safe(asdict(cfg)) or manifest.get('source_examples_sha256') != source_hash
@@ -545,7 +546,7 @@ def simulate_robot_grid(run, output, letters=tuple("ABCDEFGH"), methods=METHODS,
                     raise ValueError(f"saved case is incomplete: {destination / artifact}")
             with np.load(destination / 'robot_trace.npz', allow_pickle=False) as trace:
                 _robot_payload(manifest, trace)
-            print('  Reusing verified completed simulation', flush=True)
+            log('  Reusing verified completed simulation', flush=True)
         else:
             pending_root = output.parent / (output.name + '-work') / letter / method
             attempt = 1
@@ -566,7 +567,7 @@ def simulate_robot_grid(run, output, letters=tuple("ABCDEFGH"), methods=METHODS,
     pd.DataFrame(table).to_csv(output / 'summary.csv', index=False)
     write_json(output / 'grid.json', {'status': 'completed', 'request': request,
                                      'all_tracking_passed': result['all_tracking_passed']})
-    print(f"Open {output / 'dashboard.html'}", flush=True)
+    log(f"Open {output / 'dashboard.html'}", flush=True)
     return manifests
 
 
@@ -582,10 +583,10 @@ def simulate_robot_letters(run, output, letters=tuple("ABCDEFGH"), method="KMP",
         load_robot_case(run, letter, method)  # reject missing inputs before starting
     manifests = []
     for index, letter in enumerate(letters, 1):
-        print(f"Robot case {index}/{len(letters)}: {letter}/{method}", flush=True)
+        log(f"Robot case {index}/{len(letters)}: {letter}/{method}", flush=True)
         manifests.append(simulate_robot(run, output / letter, letter, method, config))
     build_robot_gallery(output)
-    print(f"Open {output / 'dashboard.html'}", flush=True)
+    log(f"Open {output / 'dashboard.html'}", flush=True)
     return manifests
 
 

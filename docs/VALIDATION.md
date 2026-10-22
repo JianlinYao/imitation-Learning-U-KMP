@@ -23,6 +23,12 @@ reset and file links. Linux/Windows CI exercises the complete restartable CLI
 workflow; Windows also executes `run_demo.bat` with browser opening and pausing
 disabled. The publishing PR's actual CI results are authoritative.
 
+The Windows CI exposed a legacy-console encoding failure when a gallery path
+contained Chinese characters. Progress output now escapes only unsupported
+characters, without changing stdout's encoding or numerical calculations.
+Gallery generation and the full demo/restart test both exercise Chinese output
+paths against a strict cp1252 stream, including on non-Windows hosts.
+
 Empirical calibration is scored honestly: in the new full run, KMP hidden
 coordinate coverage was 93.23% raw / 95.04% calibrated; ProMP and GP remained
 below 95%. The protocol differs from v0.4, so historical changes cannot be

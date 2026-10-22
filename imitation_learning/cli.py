@@ -6,6 +6,7 @@ from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
+from .console import log
 from .data import load_letter
 from .experiments import read_config, run_benchmark
 
@@ -61,7 +62,7 @@ def main(argv=None):
         if args.command == "inspect":
             for letter in "ABCDEFGH":
                 demos = load_letter(args.data, letter)
-                print(f"{letter}: {len(demos)} demonstrations; lengths {sorted({len(p) for p in demos})}; coordinates=2")
+                log(f"{letter}: {len(demos)} demonstrations; lengths {sorted({len(p) for p in demos})}; coordinates=2")
             return 0
         if args.command == "run":
             config = read_config(args.config)
@@ -72,7 +73,7 @@ def main(argv=None):
             stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
             output = args.output or root / "outputs" / stamp
             manifest = run_benchmark(config, args.data, output, resume=args.resume)
-            print(f"Open {output.resolve() / 'dashboard.html'}")
+            log(f"Open {output.resolve() / 'dashboard.html'}")
             return 0 if manifest["failed_trials"] == 0 else 1
         if args.command == "simulate":
             from .robot import RobotConfig, simulate_robot, simulate_robot_grid
@@ -102,7 +103,7 @@ def main(argv=None):
         if args.command == "report":
             from .reporting import make_report
             make_report(args.output)
-            print(f"Report regenerated in {args.output.resolve()}")
+            log(f"Report regenerated in {args.output.resolve()}")
             return 0
         if args.command == "serve":
             directory = args.output.resolve()
@@ -110,7 +111,7 @@ def main(argv=None):
                 raise ValueError("output must contain a generated dashboard.html")
             handler = partial(SimpleHTTPRequestHandler, directory=str(directory))
             with ThreadingHTTPServer(("127.0.0.1", args.port), handler) as server:
-                print(f"Viewer: http://127.0.0.1:{args.port}/dashboard.html (Ctrl+C to stop)", flush=True)
+                log(f"Viewer: http://127.0.0.1:{args.port}/dashboard.html (Ctrl+C to stop)", flush=True)
                 server.serve_forever()
     except (ValueError, FileNotFoundError, RuntimeError) as error:
         parser.exit(1, f"Error: {error}\n")
