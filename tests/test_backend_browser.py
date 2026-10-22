@@ -65,8 +65,11 @@ class BackendBrowserTests(unittest.TestCase):
                     screenshots.mkdir(parents=True, exist_ok=True)
                     page.screenshot(path=str(screenshots / 'manager-desktop.png'), full_page=True)
                     page.set_viewport_size({'width': 390, 'height': 844})
-                    self.assertTrue(page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'))
                     page.screenshot(path=str(screenshots / 'manager-mobile.png'), full_page=True)
+                    overflow = page.evaluate("""Array.from(document.querySelectorAll('body *'))
+                        .filter(e=>e.getBoundingClientRect().right>innerWidth)
+                        .slice(0,12).map(e=>({tag:e.tagName,id:e.id,width:e.getBoundingClientRect().width}))""")
+                    self.assertTrue(page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'), overflow)
                     self.assertEqual(errors, [])
                     browser.close()
             finally:
