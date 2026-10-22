@@ -1,5 +1,24 @@
 # Validation record
 
+## Local experiment backend (v0.6)
+
+The local combined suite ran **52 tests: 50 passed and two opt-in Chrome cases
+skipped**. The eight backend cases cover durable SQLite records and atomic queue
+claims, exclusive workspace ownership, HTTP validation and filtering, cancellation
+and retry, process failures, graceful restart, bounded logs, metric isolation and
+registered-file access. Two cases execute the real scientific CLI through the
+HTTP API: a learning evaluation and a MuJoCo KMP/U-KMP tracking demo with both
+physical controllers. Lifecycle and browser fixtures are explicitly synthetic
+and are not additional research results.
+
+The v0.6 wheel built successfully and contains the task-manager template. The
+server CLI help resolves correctly. Dedicated CI checks the new page in Chrome,
+including submission, report links, retry, validation and mobile overflow, and
+tests the real backend on Linux and Windows. Windows also checks installation
+and argument handling through `run_server.bat --help`. Check the publishing PR's
+actual CI result before treating these remote checks as passed. This backend
+does not replace or relabel the archived scientific benchmarks below.
+
 ## Research and complete workflow (v0.5)
 
 The new [v0.5 snapshot](../examples/research_validation/README.md) records a

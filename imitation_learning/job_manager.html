@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>机器人实验管理</title>
+<style>
+:root{font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif;color:#173348;background:#f2f6fa;font-size:15px}*{box-sizing:border-box}body{margin:0}header{background:#142e40;color:white;padding:22px max(20px,calc((100vw - 1280px)/2))}header h1{font-size:24px;margin:0 0 6px}header p{color:#c6dce8;margin:0}main{max-width:1280px;margin:24px auto;padding:0 20px}a{color:#176a83}h2{font-size:19px;margin:0 0 18px}h3{font-size:15px;margin:20px 0 8px}.layout{display:grid;grid-template-columns:330px minmax(0,1fr);gap:20px}.card{background:white;border:1px solid #dce5ed;border-radius:14px;padding:22px;margin-bottom:20px}.hint,small{font-size:13px;color:#647c8c;line-height:1.6}label{display:block;margin:14px 0 7px}select,input[type=number]{width:100%;border:1px solid #c4d2de;border-radius:7px;background:white;padding:9px;color:inherit}.choices{display:flex;flex-wrap:wrap;gap:8px}.choices label{margin:0;display:flex;align-items:center;gap:4px;padding:5px;border:1px solid #dce5ed;border-radius:5px}.checks{margin-top:8px}button{border:1px solid #bccedb;border-radius:7px;padding:8px 12px;background:white;color:#173348;cursor:pointer}button:disabled{opacity:.5;cursor:wait}.primary{background:#176c7f;border-color:#176c7f;color:white;width:100%;margin-top:20px}#message{color:#9a351b;white-space:pre-wrap}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.toolbar select{width:auto}#health{margin:12px 0 20px}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;border-bottom:1px solid #e2eaf0;padding:10px 7px;white-space:nowrap}tr[data-id]{cursor:pointer}tr[data-id]:hover{background:#edf7fa}tr.selected{background:#e5f3f7}.pill{display:inline-block;border-radius:20px;padding:3px 8px;background:#e7eef4}.succeeded{color:#156444;background:#e3f3e9}.failed,.interrupted{color:#a23d24;background:#fff0e8}.running{color:#1b6585;background:#e5f2fc}#detail{display:none}pre{background:#142e40;color:#dbeaf0;border-radius:9px;padding:15px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:340px;overflow:auto;font:12px/1.7 ui-monospace,monospace}#summary{display:flex;gap:12px;flex-wrap:wrap}#summary span{background:#eef5f9;border-radius:7px;padding:9px}#links{display:flex;gap:16px;flex-wrap:wrap}details{margin-top:15px}#artifacts{max-height:230px;overflow:auto;overflow-wrap:anywhere}#artifacts a{display:block;margin:7px 0}#job-id{overflow-wrap:anywhere}.actions{display:flex;gap:10px;margin-top:12px}.empty{text-align:center;color:#708698;padding:24px}.toplinks{margin:18px 0}.toplinks a{margin-right:18px}@media(max-width:850px){.layout{grid-template-columns:1fr}.card{padding:17px}main{padding:0 12px}header{padding:20px}header h1{font-size:21px}}
+</style></head><body>
+<header><h1>机器人实验管理</h1><p>创建实验 · 查看进度 · 对比结果 · 打开机械臂演示</p></header>
+<main><div id="health" class="hint">正在连接实验服务…</div><div class="layout">
+<section class="card"><h2>新建实验</h2><form id="create-form">
+<label for="kind">实验类型</label><select id="kind"><option value="learning">学习评测</option><option value="demo">学习评测 + 机械臂仿真</option></select>
+<label>字母</label><div id="letters" class="choices"></div>
+<label>算法</label><div id="methods" class="choices"></div>
+<label for="folds">评测范围</label><select id="folds"><option value="1">快速评测：五折中的第 1 折</option><option value="5">完整评测：全部 5 折</option></select>
+<label for="points">轨迹采样点数</label><input id="points" type="number" value="80" min="32" max="200" required>
+<p class="hint">包含轨迹复现、缺失补全和静态障碍适配。保留部分训练示教用于区间校准。任务按提交顺序逐个执行。</p>
+<button id="submit" class="primary" type="submit">提交实验</button><p id="message" role="status"></p>
+</form><div class="toplinks"><a href="/docs" target="_blank" rel="noopener">API 文档</a></div></section>
+<div><section class="card"><div class="toolbar"><h2>实验记录</h2><select id="filter" aria-label="筛选任务状态"><option value="">全部状态</option><option value="queued">排队中</option><option value="running">运行中</option><option value="succeeded">已完成</option><option value="failed">失败</option><option value="cancelled">已取消</option><option value="interrupted">已中断</option></select></div>
+<p id="count" class="hint"></p><div class="scroll"><table><thead><tr><th>任务</th><th>范围</th><th>状态</th><th>提交时间</th></tr></thead><tbody id="jobs"></tbody></table></div>
+<div class="actions"><button id="previous" type="button">上一页</button><button id="next" type="button">下一页</button></div></section>
+<section id="detail" class="card"><h2>实验详情</h2><div id="job-id" class="hint"></div><div id="summary"></div><p id="error" role="status"></p><div id="links"></div>
+<div class="actions"><button id="cancel" type="button">取消任务</button><button id="retry" type="button">重新运行</button></div>
+<h3>运行日志</h3><pre id="logs">等待日志…</pre><details><summary>配置与任务历史</summary><pre id="configuration"></pre><pre id="events"></pre></details>
+<details><summary>结果文件</summary><div id="artifacts"></div></details>
+</section></div></div></main>
+<script>
+const $=id=>document.getElementById(id),labels={queued:'排队中',running:'运行中',cancelling:'正在取消',succeeded:'已完成',failed:'失败',cancelled:'已取消',interrupted:'已中断'};
+let selected=null,offset=0,busy=false,total=0;
+async function api(path,options={}){const r=await fetch(path,options);const data=await r.json();if(!r.ok)throw Error(typeof data.detail==='string'?data.detail:JSON.stringify(data.detail));return data;}
+function el(tag,text,cls){const node=document.createElement(tag);if(text!==undefined)node.textContent=text;if(cls)node.className=cls;return node;}
+function checkboxes(id,values,checked){for(const value of values){const label=el('label');const input=document.createElement('input');input.type='checkbox';input.value=value;input.checked=checked.includes(value);label.append(input,document.createTextNode(value));$(id).append(label);}}
+const choices=id=>Array.from($(id).querySelectorAll('input:checked')).map(i=>i.value);
+function link(text,url){const a=el('a',text);a.href=url;a.target='_blank';a.rel='noopener';return a;}
+function artifactUrl(id,path){return `/api/jobs/${id}/files/`+path.split('/').map(encodeURIComponent).join('/');}
+async function showDetail(id){
+ const [job,logs,files,events]=await Promise.all([api(`/api/jobs/${id}`),api(`/api/jobs/${id}/logs`),api(`/api/jobs/${id}/artifacts`),api(`/api/jobs/${id}/events`)]);
+ if(id!==selected)return;
+ $('detail').style.display='block';$('job-id').textContent=`${id} · ${labels[job.state]}${job.parent_id?' · 重新运行自 '+job.parent_id.slice(0,8):''}`;
+ $('summary').replaceChildren();for(const [name,value]of [['学习记录',job.summary.learning_rows],['仿真案例',job.summary.simulation_rows]])if(value!==undefined)$('summary').append(el('span',`${name}：${value}`));
+ $('error').textContent=job.error||'';$('logs').textContent=(logs.truncated?'（显示最近一段日志）\n':'')+logs.text||'等待日志…';
+ $('configuration').textContent=JSON.stringify(job.config,null,2);$('events').textContent=events.items.map(e=>`${e.created_at}  ${labels[e.state]}  ${e.message}`).join('\n');
+ $('cancel').disabled=!['queued','running'].includes(job.state);$('retry').disabled=!['succeeded','failed','cancelled','interrupted'].includes(job.state);
+ $('links').replaceChildren();for(const [name,path]of Object.entries(job.summary.pages||{}))$('links').append(link(name==='simulation'?'打开机械臂演示':'打开学习报告',artifactUrl(id,path)));
+ $('links').append(link('查看指标 JSON',`/api/jobs/${id}/metrics`));$('artifacts').replaceChildren();for(const file of files.items)$('artifacts').append(link(`${file.path} · ${file.bytes} B`,artifactUrl(id,file.path)+'?download=true'));
+}
+async function refresh(){if(busy)return;busy=true;try{
+ const [data,health]=await Promise.all([api(`/api/jobs?limit=20&offset=${offset}`+($('filter').value?'&state='+$('filter').value:'')),api('/api/health')]);
+ total=data.total;$('health').textContent=`服务已连接 · v${health.version} · ${health.worker_active?'后台执行器运行中':'执行器未启动'} · 排队 ${health.counts.queued||0} · 运行 ${health.counts.running||0}`;
+ $('count').textContent=`共 ${total} 条 · 当前第 ${Math.floor(offset/20)+1} 页`;$('previous').disabled=offset===0;$('next').disabled=offset+20>=total;
+ $('jobs').replaceChildren();for(const job of data.items){const tr=el('tr');tr.dataset.id=job.id;if(job.id===selected)tr.className='selected';
+ tr.append(el('td',`${job.kind==='demo'?'仿真':'学习'} · ${job.id.slice(0,8)}`),el('td',`${job.params.letters.join('')} / ${job.params.methods.join(', ')}`));const state=el('td');state.append(el('span',labels[job.state],'pill '+job.state));tr.append(state,el('td',new Date(job.created_at).toLocaleString()));tr.onclick=()=>{selected=job.id;refresh();};$('jobs').append(tr);}
+ if(!data.items.length){const tr=el('tr');const td=el('td','还没有实验记录','empty');td.colSpan=4;tr.append(td);$('jobs').append(tr);}if(selected)await showDetail(selected);
+ }catch(e){$('health').textContent='连接或读取失败：'+e.message;}finally{busy=false;}}
+async function action(name){if(!selected)return;try{const job=await api(`/api/jobs/${selected}/${name}`,{method:'POST'});if(name==='retry')selected=job.id;await refresh();}catch(e){$('error').textContent=e.message;}}
+$('cancel').onclick=()=>action('cancel');$('retry').onclick=()=>action('retry');$('filter').onchange=()=>{offset=0;refresh();};$('previous').onclick=()=>{offset=Math.max(0,offset-20);refresh();};$('next').onclick=()=>{offset+=20;refresh();};
+$('create-form').onsubmit=async e=>{e.preventDefault();$('message').textContent='';const letters=choices('letters'),methods=choices('methods');if(!letters.length||!methods.length){$('message').textContent='请至少选择一个字母和一种算法。';return;}$('submit').disabled=true;try{const job=await api('/api/jobs',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind:$('kind').value,letters,methods,fold_limit:Number($('folds').value),points:Number($('points').value)})});selected=job.id;offset=0;$('filter').value='';$('message').textContent='实验已提交，可在右侧查看状态。';await refresh();}catch(e){$('message').textContent=e.message;}finally{$('submit').disabled=false;}};
+(async()=>{try{const c=await api('/api/catalog');checkboxes('letters',c.letters,c.defaults.letters);checkboxes('methods',c.methods,c.defaults.methods);if(!c.simulation_available){$('kind').querySelector('[value=demo]').disabled=true;}$('points').value=c.defaults.points;await refresh();setInterval(refresh,2000);}catch(e){$('message').textContent=e.message;}})();
+</script></body></html>

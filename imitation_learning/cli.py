@@ -31,6 +31,10 @@ def main(argv=None):
     demo.add_argument("--output", type=Path, default=root / "outputs" / "demo")
     demo.add_argument("--letters", nargs="+", choices=list("ABCDEFGH"))
     demo.add_argument("--methods", nargs="+", choices=["DMP", "ProMP", "GP", "KMP", "U-KMP"])
+    server = sub.add_parser("server", help="start the local experiment API, database and task manager")
+    server.add_argument("--workspace", type=Path, default=root / "outputs" / "server")
+    server.add_argument("--port", type=int, default=8000)
+    server.add_argument("--open-browser", action="store_true")
     report = sub.add_parser("report", help="regenerate figures and offline viewer from recorded results")
     report.add_argument("output", type=Path)
     serve = sub.add_parser("serve", help="serve an existing run on localhost only")
@@ -59,6 +63,15 @@ def main(argv=None):
     robot_view.add_argument("--output", type=Path, help="HTML filename; defaults to SOURCE/dashboard.html")
     args = parser.parse_args(argv)
     try:
+        if args.command == "server":
+            import importlib.util
+            if any(importlib.util.find_spec(name) is None for name in ('fastapi', 'uvicorn')):
+                raise RuntimeError('install server support: python -m pip install -e ".[server,simulation]"')
+            if not 1 <= args.port <= 65535:
+                raise ValueError('port must be between 1 and 65535')
+            from .server import serve as serve_manager
+            serve_manager(args.workspace, args.port, args.open_browser)
+            return 0
         if args.command == "inspect":
             for letter in "ABCDEFGH":
                 demos = load_letter(args.data, letter)
