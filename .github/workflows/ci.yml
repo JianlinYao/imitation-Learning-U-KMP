@@ -27,7 +27,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: pip
       - name: Install package
-        run: python -m pip install -e .
+        run: python -m pip install -e ".[server]" httpx
       - name: Numerical and protocol tests
         run: python -m unittest discover -s tests -v
       - name: Quick paired experiment
@@ -64,11 +64,19 @@ jobs:
           python-version: '3.12'
           cache: pip
       - name: Install simulation support
-        run: python -m pip install -e ".[simulation]"
+        run: python -m pip install -e ".[simulation,server]" httpx
       - name: Kinematics and actual MuJoCo rollout tests
         run: python -m unittest discover -s tests -p "test_robot*.py" -v
       - name: Real one-command workflow and verified restart
         run: python -m unittest discover -s tests -p test_workflow.py -v
+      - name: Persistent API queue and real learning/simulation jobs
+        run: python -m unittest discover -s tests -p test_backend.py -v
+      - name: Windows server launcher installs and resolves CLI arguments
+        if: runner.os == 'Windows'
+        shell: cmd
+        env:
+          SERVER_NO_PAUSE: '1'
+        run: run_server.bat --help
       - name: Windows double-click launcher without opening a browser
         if: runner.os == 'Windows'
         shell: cmd
@@ -110,11 +118,13 @@ jobs:
           python-version: '3.12'
           cache: pip
       - name: Install package and browser test dependency
-        run: python -m pip install -e . playwright
+        run: python -m pip install -e ".[server]" playwright httpx
       - name: Locate the runner's installed Chrome
         run: python -c "import shutil; assert shutil.which('google-chrome') or shutil.which('chromium'), 'Chrome/Chromium is required'"
       - name: Check letter switching, playback, metrics and download links
         run: python -m unittest discover -s tests -p test_robot_browser.py -v
+      - name: Check task submission, report links, retry and mobile task manager
+        run: python -m unittest discover -s tests -p test_backend_browser.py -v
       - name: Save browser test screenshots
         if: always()
         uses: actions/upload-artifact@v7
