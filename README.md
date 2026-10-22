@@ -1,8 +1,8 @@
 # Robot Imitation Learning: KMP and Uncertainty-Aware Control
 
-二维示教轨迹学习、约束适配与可复现实验。保留原论文的 **DMP、ProMP、GP、KMP、U-KMP** 方法体系，以及**轨迹复现、缺失补全、障碍适配**三个任务。
+本项目是机器人模仿学习方向的硕士毕业项目，研究二维示教轨迹学习、约束适配与不确定性感知控制。项目对比 **DMP、ProMP、GP、KMP、U-KMP** 五种方法，包含**轨迹复现、缺失补全、障碍适配**三个任务，并提供 MuJoCo 机械臂仿真与交互式结果展示。
 
-新增的 `imitation_learning/` 是统一运行入口。`Imitationlearning-KMP/` 和 `2Dletters/` 中原有 Notebook 保留作历史研究记录；其中部分旧评测单元包含占位实现、不同实验协议或结果过滤，不作为新版评测入口。
+项目的统一运行入口为 `imitation_learning/`。`Imitationlearning-KMP/` 和 `2Dletters/` 中原有 Notebook 保留作历史研究记录；其中部分旧评测单元包含占位实现、不同实验协议或结果过滤，不作为新版评测入口。
 
 > 新版结果由程序重新计算，不表示已经复现论文原表格中的数字。KMP 与 U-KMP 的规划均值可以相同；U-KMP 的不确定性感知控制效果在单独的 LQR 实验中评估。项目包含二维学习评测与 MuJoCo 教学臂物理仿真，尚无实体机械臂验证。
 
@@ -183,10 +183,8 @@ GitHub Actions 在 Python 3.10 和 3.12 上运行测试及快速实验，另在 
 
 ## 原始资料与署名
 
-本项目围绕硕士论文 *Uncertainty-Aware KMP for Robot Imitation Learning: A Comparative Study with DMP, ProMP and GPR* 展开。论文原文件未在本次代码完善中修改。
-
 - Huang et al. (2019), [Kernelized Movement Primitives](https://arxiv.org/abs/1708.08638).
 - Silvério et al. (2019), [Uncertainty-Aware Imitation Learning using Kernelized Movement Primitives](https://arxiv.org/abs/1903.02114).
 - 原作者的 [robInfLib-matlab](https://github.com/yanlongtu/robInfLib-matlab) 提供 KMP 与不确定性感知示例。
 
-数据及已有研究代码的来源说明见 [THIRD_PARTY.md](THIRD_PARTY.md)。本次完善没有将已有算法表述为新提出的算法。
+数据及已有研究代码的来源说明见 [THIRD_PARTY.md](THIRD_PARTY.md)。
