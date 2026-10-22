@@ -28,6 +28,9 @@ contained Chinese characters. Progress output now escapes only unsupported
 characters, without changing stdout's encoding or numerical calculations.
 Gallery generation and the full demo/restart test both exercise Chinese output
 paths against a strict cp1252 stream, including on non-Windows hosts.
+Source hash keys also use forward slashes consistently across metadata creation
+and report regeneration. This prevents Windows from treating an unchanged
+completed run as modified when resuming; source-content checks remain enforced.
 
 Empirical calibration is scored honestly: in the new full run, KMP hidden
 coordinate coverage was 93.23% raw / 95.04% calibrated; ProMP and GP remained

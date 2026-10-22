@@ -228,7 +228,7 @@ def _source_metadata(root, data_root, config):
             "platform": platform.platform(), "packages": versions, "blas_threads": 1,
             "source_revision_at_run": git("rev-parse", "HEAD"),
             "source_dirty_at_run": bool(git("status", "--porcelain")),
-            "source_sha256": {str(p.relative_to(root)): sha256(p.read_bytes()).hexdigest()
+            "source_sha256": {p.relative_to(root).as_posix(): sha256(p.read_bytes()).hexdigest()
                               for p in sorted((root / "imitation_learning").iterdir())
                               if p.suffix in (".py", ".html", ".xml")},
             "input_sha256": {f"{letter}.mat": sha256((data_root / f"{letter}.mat").read_bytes()).hexdigest()
