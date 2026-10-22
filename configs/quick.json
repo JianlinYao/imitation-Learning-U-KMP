@@ -5,6 +5,7 @@
   "fold_limit": 1,
   "timing_repeats": 1,
   "model": {
+    "kmp_adaptation": "gaussian",
     "basis_functions": 25,
     "gmm_components": 5,
     "reference_points": 80,

@@ -1,0 +1,16 @@
+{
+  "letters": ["A", "B", "C", "D", "E", "F", "G", "H"],
+  "methods": ["DMP", "ProMP", "GP", "KMP", "U-KMP"],
+  "scenarios": ["reproduction", "missing", "obstacle"],
+  "folds": 5,
+  "seed": 42,
+  "points": 200,
+  "calibration_fraction": 0.2,
+  "timing_repeats": 3,
+  "model": {
+    "kmp_adaptation": "reference",
+    "gmm_components": 8,
+    "reference_points": 200,
+    "kmp_covariance_regularization": 200
+  }
+}

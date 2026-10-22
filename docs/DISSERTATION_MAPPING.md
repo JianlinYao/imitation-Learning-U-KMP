@@ -29,3 +29,7 @@ The dissertation title, research questions, five method labels and three task ca
 8. **Conditioning:** the new implementation conditions a learned joint Gaussian trajectory. Historical KMP notebooks insert/replace reference points. This implementation difference is explicit in `METHODOLOGY.md` and can change numeric results.
 
 The original notebook calculations remain available for historical comparison. New training, evaluation and reports should use `python -m imitation_learning`, not legacy placeholder/filtered summary cells.
+
+## v0.5 supplemental experiments
+
+Reference KMP adaptation, training-only empirical calibration, explicit path/gap success criteria and actual MuJoCo task-space LQR control are described in [Research improvements](RESEARCH_IMPROVEMENTS.md). They produce new versioned results; the dissertation PDF and previously recorded tables are retained. The original `benchmark.json` now explicitly chooses historical Gaussian adaptation, while `research.json` chooses reference-point updates.

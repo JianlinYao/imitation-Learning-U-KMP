@@ -1,3 +1,5 @@
+> v0.5 adds reference-database KMP adaptation, reserved-demo empirical calibration, task-interior success thresholds, restartable workflows and task-space physics control. Full specification: [Research improvements](RESEARCH_IMPROVEMENTS.md). The Gaussian mode and archived results below remain available.
+
 # Methods and experiment protocol
 
 ## Scope and units
@@ -56,7 +58,7 @@ These are KMP mean/covariance equations from Huang et al. and Silvério et al. D
 
 ### Conditioning choice
 
-Given any fitted Gaussian trajectory `(m,C)` and selected position/state observations `y` with observation noise `R`, the new implementation uses
+Given any fitted Gaussian trajectory `(m,C)` and selected position/state observations `y` with observation noise `R`, the `kmp_adaptation="gaussian"` mode uses
 
 `m_post = m + C_:o (C_oo + R)^(-1) (y - m_o)`
 

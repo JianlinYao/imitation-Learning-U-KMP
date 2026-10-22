@@ -1,0 +1,53 @@
+{
+  "version": "0.5.0",
+  "learning_config": "configs/research.json",
+  "demo_config": "configs/demo.json",
+  "demo_source": "one representative fold-0 reproduction case per letter/method",
+  "force_study": "same KMP path, shared duration and 0.02 N x-force for both LQR modes",
+  "files": {
+    "calibration_splits.json": {
+      "bytes": 104036,
+      "sha256": "ed4ce37bedaed0f9b53829d2a4ba7fa42da060e17ce96c8e9ac5bcb2fd73c173"
+    },
+    "calibration.json": {
+      "bytes": 134739,
+      "sha256": "9533e1f376d712b4417bea22e867e21a4ec66293c01a7850f569d032b919cebb"
+    },
+    "learning_metrics.csv": {
+      "bytes": 486437,
+      "sha256": "90dd0eb4ec8ae52ea9f17e26ef69cab11085489a521916f8acb210a574ff18a8"
+    },
+    "audit.json": {
+      "bytes": 184,
+      "sha256": "0828e48e78b2088dfbf05eddbc9c5f8a5835c44004fa6c6d182c711e81461b81"
+    },
+    "learning_summary.csv": {
+      "bytes": 11992,
+      "sha256": "231a68c4875b17da718ca074c437bb672c5915be9abb271b6a1abfda425edbe7"
+    },
+    "README.md": {
+      "bytes": 4106,
+      "sha256": "e66b54cda33711f4f68b1d00e66a6b2ee372fa627dba6b69598f83e4ffbb647b"
+    },
+    "force_control_summary.csv": {
+      "bytes": 5569,
+      "sha256": "ffcf5ff221673cde7620c3e647f3f6797b06193a8e06e59a7ad802b8134990cd"
+    },
+    "tracking_g_ukmp.png": {
+      "bytes": 116410,
+      "sha256": "69c5a84c76f7ec2b7cf093f69fc88e7d28686aed686a99ec2e2fa7140bea87b8"
+    },
+    "demo_robot_summary.csv": {
+      "bytes": 11683,
+      "sha256": "82ea2a262735ee7e940b648a88d9493c5ecd866a238f77d39b864551bac3eac5"
+    },
+    "learning_manifest.json": {
+      "bytes": 5634,
+      "sha256": "80950bb39932ae4eac5d26ec17b19fd74c6f740a2ea23c2884659b2897bb567b"
+    },
+    "missing_coverage.png": {
+      "bytes": 61043,
+      "sha256": "41e65b80b4e9fc009e9082fee51a1955a1d71e2d0c5ead85f2b0b809f86088f3"
+    }
+  }
+}

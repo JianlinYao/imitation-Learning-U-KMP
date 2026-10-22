@@ -1,0 +1,5634 @@
+[
+  {
+    "letter": "A",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 4.361613139485291,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 8.548604667887846,
+    "raw_calibration_coverage": 0.4625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 60.44135567174282,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 118.46288029339165,
+    "raw_calibration_coverage": 0.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.3861737676286967,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 2.7168506608664393,
+    "raw_calibration_coverage": 0.87375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.797944885658803,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 0.7188142086195611,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.9456275324406713,
+    "raw_calibration_coverage": 0.95625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 0.7188142086195611,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.9456275324406713,
+    "raw_calibration_coverage": 0.95625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 18.43778970363092,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 36.13740377364004,
+    "raw_calibration_coverage": 0.3025,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 66.05017562989171,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 129.45596540713294,
+    "raw_calibration_coverage": 0.05,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.3989636329602277,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 2.7419183362833577,
+    "raw_calibration_coverage": 0.85,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.0606568883472105,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 2.078849301114854,
+    "raw_calibration_coverage": 0.95,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 0.9854281119005389,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.014734703353324,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.988843472435451,
+    "raw_calibration_coverage": 0.94375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 0.9854281119005389,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.014734703353324,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.988843472435451,
+    "raw_calibration_coverage": 0.94375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 7.794854133132393,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 15.277633365682673,
+    "raw_calibration_coverage": 0.32625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 75.65740649175824,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 148.28579188755302,
+    "raw_calibration_coverage": 0.00625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.8213803798515282,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 3.5698399466568786,
+    "raw_calibration_coverage": 0.8125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.4963515376501744,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.0293363994784128,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.9183936450036536,
+    "raw_calibration_coverage": 0.95625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.0293363994784128,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.9183936450036536,
+    "raw_calibration_coverage": 0.95625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.2693501264130327,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 6.407808500621017,
+    "raw_calibration_coverage": 0.72375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 97.95660451986618,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 191.99141690677118,
+    "raw_calibration_coverage": 0.0125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.12825795841118,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 2.211344963756603,
+    "raw_calibration_coverage": 0.915,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.0306786587278134,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 2.020093050740564,
+    "raw_calibration_coverage": 0.9375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 0.7672304248824277,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.785089394307629,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.498710922027372,
+    "raw_calibration_coverage": 0.925,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 0.7672304248824277,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.785089394307629,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.498710922027372,
+    "raw_calibration_coverage": 0.925,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 8.339637857228992,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 16.345389844275612,
+    "raw_calibration_coverage": 0.45875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 126.91597337798692,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 248.75073688369866,
+    "raw_calibration_coverage": 0.00625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 3.1183208226558277,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 6.111796504646735,
+    "raw_calibration_coverage": 0.69375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.1958941354959767,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 4.303873419434832,
+    "raw_calibration_coverage": 0.76875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.7493476445745346,
+    "raw_calibration_coverage": 0.96875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0129889936179224,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.9854219442266026,
+    "raw_calibration_coverage": 0.95,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "A",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.7493476445745346,
+    "raw_calibration_coverage": 0.96875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "A",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0129889936179224,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.9854219442266026,
+    "raw_calibration_coverage": 0.95,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.3075629672073004,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 4.522740307784691,
+    "raw_calibration_coverage": 0.75625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 55.010275880493936,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 107.81815950538052,
+    "raw_calibration_coverage": 0.08125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.3740531857062384,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 4.653058741366808,
+    "raw_calibration_coverage": 0.81625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.6337851257688232,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.202160004984136,
+    "raw_calibration_coverage": 0.7875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.23196599129511,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.7087186563079826,
+    "raw_calibration_coverage": 0.99375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.23196599129511,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.7087186563079826,
+    "raw_calibration_coverage": 0.99375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.1509323152935487,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 6.175713855698762,
+    "raw_calibration_coverage": 0.4075,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 51.71108158705253,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 101.3518575122353,
+    "raw_calibration_coverage": 0.01875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.290960244054566,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 4.490199568360042,
+    "raw_calibration_coverage": 0.8775,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.8662484761064175,
+    "raw_calibration_coverage": 0.98125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.1761240138441373,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.2336198825635356,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 2.417850540437061,
+    "raw_calibration_coverage": 0.9,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.1761240138441373,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.2336198825635356,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 2.417850540437061,
+    "raw_calibration_coverage": 0.9,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 1.7165046974223839,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 3.3642873862416955,
+    "raw_calibration_coverage": 0.76875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 41.91593585055291,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 82.153724645375,
+    "raw_calibration_coverage": 0.01875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.097676216884978,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 4.111369836320788,
+    "raw_calibration_coverage": 0.835,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.8149216495642149,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.5571810679078864,
+    "raw_calibration_coverage": 0.88125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.0635079642024436,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.159906672874299,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 2.2733753042613083,
+    "raw_calibration_coverage": 0.8625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.0635079642024436,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.159906672874299,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 2.2733753042613083,
+    "raw_calibration_coverage": 0.8625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.3050106066675315,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 6.477701757591237,
+    "raw_calibration_coverage": 0.5675,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 49.53868709847653,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 97.09404255441302,
+    "raw_calibration_coverage": 0.025,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.2846185731127746,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 4.477770121712327,
+    "raw_calibration_coverage": 0.8275,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.211530407444509,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 4.334519949306429,
+    "raw_calibration_coverage": 0.85625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.16407582663302,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.5678747091061094,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.072977962119188,
+    "raw_calibration_coverage": 0.925,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.16407582663302,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.5678747091061094,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.072977962119188,
+    "raw_calibration_coverage": 0.925,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.141696195709044,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 6.157611393956228,
+    "raw_calibration_coverage": 0.65875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 55.58919815529938,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 108.9528263138472,
+    "raw_calibration_coverage": 0.00625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.99234628088377,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 3.9049269552645116,
+    "raw_calibration_coverage": 0.825,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.4628551520080344,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 2.8671434125346136,
+    "raw_calibration_coverage": 0.8625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 0.9814650507943754,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 2.241437460637666,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 4.393136696448741,
+    "raw_calibration_coverage": 0.775,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "B",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 0.9814650507943754,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "B",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 2.241437460637666,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 4.393136696448741,
+    "raw_calibration_coverage": 0.775,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.198547573557106,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.309074062469853,
+    "raw_calibration_coverage": 0.6983333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 82.3576032825823,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 161.41793628689905,
+    "raw_calibration_coverage": 0.029166666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.6377062015781803,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.209845172351127,
+    "raw_calibration_coverage": 0.8516666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.071143568082965,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 4.059366800254392,
+    "raw_calibration_coverage": 0.8125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.1982275931225845,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.0022463644438848,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.1982275931225845,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      5
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.0022463644438848,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      5
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.986806297665521,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 7.813996756761895,
+    "raw_calibration_coverage": 0.595,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 88.02744731294192,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 172.5306263843633,
+    "raw_calibration_coverage": 0.004166666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.2556137492124817,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.420921711489826,
+    "raw_calibration_coverage": 0.7825,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.739679805309162,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 5.369673747577665,
+    "raw_calibration_coverage": 0.7625,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.6967131171748837,
+    "raw_calibration_coverage": 0.9741666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.5575516844488817,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.6967131171748837,
+    "raw_calibration_coverage": 0.9741666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.5575516844488817,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 1.8848421277933882,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.694222687018883,
+    "raw_calibration_coverage": 0.7291666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      10,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 33.807979349602604,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 66.26242191529498,
+    "raw_calibration_coverage": 0.025,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      10,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.555904323939073,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.0495164383107247,
+    "raw_calibration_coverage": 0.915,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      10,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.4185652788704564,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.7803368563051127,
+    "raw_calibration_coverage": 0.9208333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      10,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.9380395797239462,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      10,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 0.4944247080614091,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      10,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.9380395797239462,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      10,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 0.4944247080614091,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      10,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.375618250203243,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.656126211414419,
+    "raw_calibration_coverage": 0.5825,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 28.103174961907634,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 55.08121077656677,
+    "raw_calibration_coverage": 0.029166666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.1978601735389622,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.3077267831913195,
+    "raw_calibration_coverage": 0.7608333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.000300919187621,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 3.9205177598501018,
+    "raw_calibration_coverage": 0.8291666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.546857091330566,
+    "raw_calibration_coverage": 0.9683333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 0.5097236035303228,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.546857091330566,
+    "raw_calibration_coverage": 0.9683333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 0.5097236035303228,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.032509772159642,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 5.943609936198664,
+    "raw_calibration_coverage": 0.6175,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 61.86296144995512,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 121.2491764189018,
+    "raw_calibration_coverage": 0.125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.582343737381976,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.1013367364311786,
+    "raw_calibration_coverage": 0.8433333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.4909685194375868,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.9222446001806777,
+    "raw_calibration_coverage": 0.8041666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.3776504285202276,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.5336506165969979,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "C",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.3776504285202276,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "C",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.5336506165969979,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.6096230085509675,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 5.114767109986958,
+    "raw_calibration_coverage": 0.5783333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      6,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 130.59146661575264,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 255.95457125514,
+    "raw_calibration_coverage": 0.016666666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      6,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 3.0239265737811776,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 5.92678717650471,
+    "raw_calibration_coverage": 0.74,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      6,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 4.240508994358529,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 8.31124490506088,
+    "raw_calibration_coverage": 0.6333333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      6,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.9166513700333736,
+    "raw_calibration_coverage": 0.9516666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      6,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.4428617867491909,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.827957136697526,
+    "raw_calibration_coverage": 0.8833333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      6,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.9166513700333736,
+    "raw_calibration_coverage": 0.9516666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      6,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.4428617867491909,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.827957136697526,
+    "raw_calibration_coverage": 0.8833333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      6,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 1.9630774654613925,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.847561131166501,
+    "raw_calibration_coverage": 0.7683333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 39.80515497738898,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 78.01667015471767,
+    "raw_calibration_coverage": 0.041666666666666664,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.6566821620139744,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.2470373713773406,
+    "raw_calibration_coverage": 0.835,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.7759283000390678,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 3.4807555072020158,
+    "raw_calibration_coverage": 0.8375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.8209469633567552,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.465998505184742,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.8209469633567552,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.465998505184742,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 5.967355955445867,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 11.695802755604502,
+    "raw_calibration_coverage": 0.4575,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      7,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 36.6365749722127,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 71.80636746243842,
+    "raw_calibration_coverage": 0.03333333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      7,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.6671253504824914,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 5.227469629199452,
+    "raw_calibration_coverage": 0.755,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      7,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 4.0425083680334986,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 7.9231708085474475,
+    "raw_calibration_coverage": 0.5916666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      7,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.4055090099956737,
+    "raw_calibration_coverage": 0.9841666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      7,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0204627833564486,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.000070302942139,
+    "raw_calibration_coverage": 0.9458333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      7,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.4055090099956737,
+    "raw_calibration_coverage": 0.9841666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      7,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0204627833564486,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.000070302942139,
+    "raw_calibration_coverage": 0.9458333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      7,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.4294769727105208,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 6.721651352322074,
+    "raw_calibration_coverage": 0.6016666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      8,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 57.760291225011294,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 113.20809053756706,
+    "raw_calibration_coverage": 0.03333333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      8,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.4316953116842175,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.766035232275968,
+    "raw_calibration_coverage": 0.76,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      8,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.7460868540732943,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 5.382231332402556,
+    "raw_calibration_coverage": 0.7083333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      8,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.5686577618171547,
+    "raw_calibration_coverage": 0.9875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      8,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.517592860372343,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      8,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.5686577618171547,
+    "raw_calibration_coverage": 0.9875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      8,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.517592860372343,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      8,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.119299510066894,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 6.113714696724548,
+    "raw_calibration_coverage": 0.5858333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 85.27242832979884,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 167.1308884006787,
+    "raw_calibration_coverage": 0.004166666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.2404327790269165,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.391167556675741,
+    "raw_calibration_coverage": 0.7666666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 4.453480744979197,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 8.728661866001836,
+    "raw_calibration_coverage": 0.5708333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.420613290428262,
+    "raw_calibration_coverage": 0.9891666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.4787409975503945,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.8982790976616055,
+    "raw_calibration_coverage": 0.9,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "D",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.420613290428262,
+    "raw_calibration_coverage": 0.9891666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "D",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.4787409975503945,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.8982790976616055,
+    "raw_calibration_coverage": 0.9,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.9370657822359645,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 5.756543153407452,
+    "raw_calibration_coverage": 0.545,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 73.75346393493842,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 144.55413304755308,
+    "raw_calibration_coverage": 0.004166666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.28217741492083,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 2.5130215550354964,
+    "raw_calibration_coverage": 0.895,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.3606939136867513,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.6669110648088856,
+    "raw_calibration_coverage": 0.9,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.911530936819989,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 0.9600351003484209,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.911530936819989,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 0.9600351003484209,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      2,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.7568112379869025,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 7.363214723169663,
+    "raw_calibration_coverage": 0.5058333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      3,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 87.91992618294005,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 172.3198888419826,
+    "raw_calibration_coverage": 0.008333333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      3,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.4766337401809313,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.854112933651355,
+    "raw_calibration_coverage": 0.7958333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      3,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 3.2202725289343594,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 6.311618177115063,
+    "raw_calibration_coverage": 0.775,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      3,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.3447474816667964,
+    "raw_calibration_coverage": 0.9858333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      3,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.755355788416569,
+    "raw_calibration_coverage": 0.9875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      3,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.3447474816667964,
+    "raw_calibration_coverage": 0.9858333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      3,
+      9
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.755355788416569,
+    "raw_calibration_coverage": 0.9875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      3,
+      9
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 4.136964964746554,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 8.10830233620726,
+    "raw_calibration_coverage": 0.57,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      8,
+      10,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 124.43596384647198,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 243.89000752061332,
+    "raw_calibration_coverage": 0.029166666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      8,
+      10,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 3.635322384462165,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 7.125100945738115,
+    "raw_calibration_coverage": 0.7916666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      8,
+      10,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 6.093177460483056,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 11.942408373958019,
+    "raw_calibration_coverage": 0.6541666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      8,
+      10,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.1880616492678722,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 2.328558043978287,
+    "raw_calibration_coverage": 0.93,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      8,
+      10,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 2.524095212900124,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 4.947135710834203,
+    "raw_calibration_coverage": 0.8041666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      8,
+      10,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.1880616492678722,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 2.328558043978287,
+    "raw_calibration_coverage": 0.93,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      8,
+      10,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 2.524095212900124,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 4.947135710834203,
+    "raw_calibration_coverage": 0.8041666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      8,
+      10,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.156659510655771,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.2269749678010875,
+    "raw_calibration_coverage": 0.7983333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 46.93145306381866,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 91.98395774721655,
+    "raw_calibration_coverage": 0.025,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.9721793585336862,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.8654005137793312,
+    "raw_calibration_coverage": 0.7533333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.8683580931104165,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 5.621878557260403,
+    "raw_calibration_coverage": 0.7166666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.9758490268836431,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.269277482959455,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.9758490268836431,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.269277482959455,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      3,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.0604914512680423,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.0384890349380305,
+    "raw_calibration_coverage": 0.7933333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      7,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 101.38405397988701,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 198.70909440724327,
+    "raw_calibration_coverage": 0.025,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      7,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.1737477856490033,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.26046737134574,
+    "raw_calibration_coverage": 0.7683333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      7,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.974565909810849,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 5.830042052869882,
+    "raw_calibration_coverage": 0.7041666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      7,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.0794803060240084,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      7,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.5679337298713052,
+    "raw_calibration_coverage": 0.9875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      7,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "E",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.0794803060240084,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      7,
+      13
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "E",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.5679337298713052,
+    "raw_calibration_coverage": 0.9875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      2,
+      7,
+      13
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.7503132929051004,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 5.390515000295757,
+    "raw_calibration_coverage": 0.6591666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 84.97075765225925,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 166.53962473750934,
+    "raw_calibration_coverage": 0.008333333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.7632482155288258,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.4559029982410174,
+    "raw_calibration_coverage": 0.8458333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.06361631825095,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 4.044613661681009,
+    "raw_calibration_coverage": 0.7958333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.8545978565955581,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.383385398000893,
+    "raw_calibration_coverage": 0.9833333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.8545978565955581,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.383385398000893,
+    "raw_calibration_coverage": 0.9833333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.5367830160792257,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.972003348108175,
+    "raw_calibration_coverage": 0.7358333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 83.76790393395824,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 164.18207477096925,
+    "raw_calibration_coverage": 0.0125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.0062598439973858,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.932197037863823,
+    "raw_calibration_coverage": 0.8275,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.4114640474675784,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 4.726382683049641,
+    "raw_calibration_coverage": 0.8416666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.9575969422673271,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.2215374951074136,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.3941694961758033,
+    "raw_calibration_coverage": 0.9416666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.9575969422673271,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.2215374951074136,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.3941694961758033,
+    "raw_calibration_coverage": 0.9416666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.8801685135339383,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 5.645026555932782,
+    "raw_calibration_coverage": 0.6325,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 108.64396907082053,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 212.9382665162918,
+    "raw_calibration_coverage": 0.016666666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.1894898068378557,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.291321165919757,
+    "raw_calibration_coverage": 0.755,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 3.686615619209278,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 7.225633838493015,
+    "raw_calibration_coverage": 0.7125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.4427945168481517,
+    "raw_calibration_coverage": 0.9833333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.6038595299357594,
+    "raw_calibration_coverage": 0.9958333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.4427945168481517,
+    "raw_calibration_coverage": 0.9833333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.6038595299357594,
+    "raw_calibration_coverage": 0.9958333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      9,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 3.290100415511979,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 6.448478319923746,
+    "raw_calibration_coverage": 0.6058333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      8,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 57.172591962437345,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 112.05622114918137,
+    "raw_calibration_coverage": 0.04583333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      8,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.9190902420073037,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 5.721311741956626,
+    "raw_calibration_coverage": 0.7366666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      8,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 3.700797646681192,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 7.253430101565724,
+    "raw_calibration_coverage": 0.7958333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      8,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.5268309042219472,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      8,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.1892056443005241,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.3308002330407773,
+    "raw_calibration_coverage": 0.9208333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      8,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.5268309042219472,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      8,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.1892056443005241,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.3308002330407773,
+    "raw_calibration_coverage": 0.9208333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      8,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 1.54331462244718,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.024841076810504,
+    "raw_calibration_coverage": 0.8416666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 64.61594654815825,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 126.64492806135539,
+    "raw_calibration_coverage": 0.1125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.701439446946877,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.334760037891627,
+    "raw_calibration_coverage": 0.8375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.6062929134583124,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 5.10824024354026,
+    "raw_calibration_coverage": 0.7958333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.9044962214120206,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.8559790686526731,
+    "raw_calibration_coverage": 0.9666666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "F",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 0.9044962214120206,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "F",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.8559790686526731,
+    "raw_calibration_coverage": 0.9666666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      4,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 8.00569710396594,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 15.690877994909854,
+    "raw_calibration_coverage": 0.2525,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 95.96939223443863,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 188.09655239769765,
+    "raw_calibration_coverage": 0.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.5744378991527685,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 3.0858415782343322,
+    "raw_calibration_coverage": 0.7775,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.5663847356609863,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.0700576678288263,
+    "raw_calibration_coverage": 0.7,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.3130446213800657,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.8209534615381344,
+    "raw_calibration_coverage": 0.975,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.3130446213800657,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.8209534615381344,
+    "raw_calibration_coverage": 0.975,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      7,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.8883837563438575,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 5.661128135964476,
+    "raw_calibration_coverage": 0.74375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 50.997712994966385,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 99.9536807640444,
+    "raw_calibration_coverage": 0.0125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.3509377833696834,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 4.607753385299007,
+    "raw_calibration_coverage": 0.67125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.650310858162171,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 5.194513829833299,
+    "raw_calibration_coverage": 0.56875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.283157406830857,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.6633263846129271,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.283157406830857,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.6633263846129271,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.8681531392575637,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 5.621476855090319,
+    "raw_calibration_coverage": 0.705,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 131.43239075055124,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 257.60275227307574,
+    "raw_calibration_coverage": 0.0125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.931486912798633,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 3.7856447856957764,
+    "raw_calibration_coverage": 0.72375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.82793590336094,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.582688536635131,
+    "raw_calibration_coverage": 0.6875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.0246584147741264,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.503675202378548,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.0246584147741264,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.503675202378548,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      5,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.3699769845053207,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.64506953381927,
+    "raw_calibration_coverage": 0.7508333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      3,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 96.57143916881414,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 189.2765427060764,
+    "raw_calibration_coverage": 0.016666666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      3,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.9943642253646776,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.908882053769892,
+    "raw_calibration_coverage": 0.7866666666666666,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      3,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.4136569197445508,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 4.730680633735203,
+    "raw_calibration_coverage": 0.7458333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      3,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.0977223904353244,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      3,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.401438773586554,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      3,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.0977223904353244,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      3,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.401438773586554,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      1,
+      3,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.239726819349579,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.389783901133622,
+    "raw_calibration_coverage": 0.7858333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      8,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 113.38050010616439,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 222.221696757222,
+    "raw_calibration_coverage": 0.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      8,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 1.8442104147006595,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 3.61458599272697,
+    "raw_calibration_coverage": 0.7108333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      8,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 1.542633077784352,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 3.0235052738175057,
+    "raw_calibration_coverage": 0.6708333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      8,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.0921070281223642,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      8,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.133644569704324,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      8,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "G",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.0921070281223642,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      8,
+      10
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "G",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 1.133644569704324,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      4,
+      8,
+      10
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 2.326446834153609,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 4.559752006888302,
+    "raw_calibration_coverage": 0.7575,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      6,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 0,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 51.920381413720904,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 101.76207763447579,
+    "raw_calibration_coverage": 0.0125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      6,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.471260256538364,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 4.843581099240408,
+    "raw_calibration_coverage": 0.74125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      6,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 0,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.284888689145879,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 4.478299539408858,
+    "raw_calibration_coverage": 0.59375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      6,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.3702874320234784,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      6,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 0,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.9193700826345026,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.7618962349672924,
+    "raw_calibration_coverage": 0.875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      6,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.3702874320234784,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      6,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 0,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.9193700826345026,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 3.7618962349672924,
+    "raw_calibration_coverage": 0.875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      6,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 4.932643277287489,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 9.667803172067098,
+    "raw_calibration_coverage": 0.55,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 1,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 36.29961210657811,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 71.14593238166722,
+    "raw_calibration_coverage": 0.05,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.500939779136001,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 4.901751894610119,
+    "raw_calibration_coverage": 0.7675,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 1,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.40203711979532,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 4.70790624432715,
+    "raw_calibration_coverage": 0.7,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.3035820957387334,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 1,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.7325846768107234,
+    "raw_calibration_coverage": 0.99375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.3035820957387334,
+    "raw_calibration_coverage": 1.0,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      6
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 1,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 1.7325846768107234,
+    "raw_calibration_coverage": 0.99375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      6
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 5.5408012532056805,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 10.85977090177753,
+    "raw_calibration_coverage": 0.4775,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 2,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 64.57587152769015,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 126.56638246455823,
+    "raw_calibration_coverage": 0.03125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 3.0410736885481318,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 5.960394903886716,
+    "raw_calibration_coverage": 0.7375,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 2,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 3.688300947975113,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 7.228937022176161,
+    "raw_calibration_coverage": 0.55,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.7484520760953264,
+    "raw_calibration_coverage": 0.99125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 2,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.1470254080381097,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 2.2481284891070548,
+    "raw_calibration_coverage": 0.875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 800,
+    "quantile": 1.7484520760953264,
+    "raw_calibration_coverage": 0.99125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      7
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 2,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.1470254080381097,
+    "level": 0.95,
+    "scores": 160,
+    "quantile": 2.2481284891070548,
+    "raw_calibration_coverage": 0.875,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      3,
+      7
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 4.1787439226774845,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 8.190187589063498,
+    "raw_calibration_coverage": 0.5133333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 3,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 65.0672779911514,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 127.52952143471245,
+    "raw_calibration_coverage": 0.008333333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 2.466622219297293,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 4.834490713288953,
+    "raw_calibration_coverage": 0.78,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 3,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 2.402313490483344,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 4.70844792092206,
+    "raw_calibration_coverage": 0.6958333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.2538918474696124,
+    "raw_calibration_coverage": 0.9975,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 3,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.162950018138993,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.2793401513726286,
+    "raw_calibration_coverage": 0.9083333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.0,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 1.2538918474696124,
+    "raw_calibration_coverage": 0.9975,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      12
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 3,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.162950018138993,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 2.2793401513726286,
+    "raw_calibration_coverage": 0.9083333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      1,
+      12
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "reproduction",
+    "scale": 9.300379623210373,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 18.22840910404253,
+    "raw_calibration_coverage": 0.3675,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      7,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 4,
+    "method": "ProMP",
+    "scenario": "missing",
+    "scale": 108.43319171041477,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 212.5251504811401,
+    "raw_calibration_coverage": 0.0125,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      7,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "reproduction",
+    "scale": 3.903417419126093,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 7.650557558113432,
+    "raw_calibration_coverage": 0.6833333333333333,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      7,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 4,
+    "method": "GP",
+    "scenario": "missing",
+    "scale": 4.083365925942223,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 8.003250150544806,
+    "raw_calibration_coverage": 0.4666666666666667,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      7,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "reproduction",
+    "scale": 1.2780895691458471,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 2.5050095245421753,
+    "raw_calibration_coverage": 0.89,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      7,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 4,
+    "method": "KMP",
+    "scenario": "missing",
+    "scale": 1.729387780389193,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 3.389537764866483,
+    "raw_calibration_coverage": 0.7083333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      7,
+      11
+    ],
+    "target": "hidden positions"
+  },
+  {
+    "letter": "H",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "reproduction",
+    "scale": 1.2780895691458471,
+    "level": 0.95,
+    "scores": 1200,
+    "quantile": 2.5050095245421753,
+    "raw_calibration_coverage": 0.89,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      7,
+      11
+    ],
+    "target": "positions"
+  },
+  {
+    "letter": "H",
+    "fold": 4,
+    "method": "U-KMP",
+    "scenario": "missing",
+    "scale": 1.729387780389193,
+    "level": 0.95,
+    "scores": 240,
+    "quantile": 3.389537764866483,
+    "raw_calibration_coverage": 0.7083333333333334,
+    "scope": "empirical marginal position bands; no trajectory-level coverage guarantee",
+    "calibration_demo_indices": [
+      0,
+      7,
+      11
+    ],
+    "target": "hidden positions"
+  }
+]

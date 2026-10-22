@@ -28,6 +28,8 @@ class ModelConfig:
     reference_points: int = 200
     kmp_mean_regularization: float = 0.1
     kmp_covariance_regularization: float = 200.0
+    kmp_adaptation: str = "reference"
+    kmp_reference_tolerance: float = 0.0005
 
 
 class GaussianPrimitive:
@@ -169,6 +171,10 @@ class GP(GaussianPrimitive):
                          "effective_noise_variance": noise, "hyperparameter_optimization": False}
         return self
 
+    def predict(self, observations=None):
+        latent = super().predict(observations)
+        return Prediction(latent.state, latent.covariance, self.config.gp_noise_variance)
+
 
 class KMP(GaussianPrimitive):
     def fit(self, training: list[np.ndarray], t: np.ndarray):
@@ -192,8 +198,15 @@ class KMP(GaussianPrimitive):
         self.ref_t, self.ref_mean, self.ref_covariance = ref_t, mean, covariance
         self._cov_factor = cov_factor
         self.metadata = metadata | {"covariance_scale": scale, "state_order": ["px", "py", "vx", "vy"],
-                                    "conditioning": "Gaussian posterior position/state observations"}
+                                    "conditioning": config.kmp_adaptation}
         return self
+
+    def predict(self, observations=None):
+        if observations and self.config.kmp_adaptation == "reference":
+            from .kmp_adaptation import reference_prediction
+            return reference_prediction(self.ref_t, self.ref_mean, self.ref_covariance,
+                                        self.t, observations, self.config)
+        return super().predict(observations)
 
     def positional_variance(self, query_t: np.ndarray) -> np.ndarray:
         cross = state_kernel(query_t, self.ref_t, self.config.length_scale)

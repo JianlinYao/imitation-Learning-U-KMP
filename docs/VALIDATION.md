@@ -1,5 +1,36 @@
 # Validation record
 
+## Research and complete workflow (v0.5)
+
+The new [v0.5 snapshot](../examples/research_validation/README.md) records a
+separate full research run: **1,575 records, zero execution errors**, with
+reference KMP updates and reserved-demo empirical calibration. All predictions'
+RMSE, endpoint error and gap error were independently rechecked, and all 40
+fit/calibration/test partitions were verified disjoint. The source/input hashes
+match the files used for this run. The original archived records below are
+retained.
+
+The default 80-sample, one-fold `demo` workflow generated 345 learning records
+and **40/40** passing actual MuJoCo tracking cases; each letter's five methods
+shared one duration. The corresponding KMP fixed/covariance-LQR force study
+generated **16/16** passing tracking cases, with all control-effort and
+deflection results retained. The covariance affects actual gains and plant
+response; it is not only a display label.
+
+The local suite ran **43 tests: 42 passed, one opt-in browser case skipped**.
+The dedicated Chrome CI job additionally checks controller selection, playback
+reset and file links. Linux/Windows CI exercises the complete restartable CLI
+workflow; Windows also executes `run_demo.bat` with browser opening and pausing
+disabled. The publishing PR's actual CI results are authoritative.
+
+Empirical calibration is scored honestly: in the new full run, KMP hidden
+coordinate coverage was 93.23% raw / 95.04% calibrated; ProMP and GP remained
+below 95%. The protocol differs from v0.4, so historical changes cannot be
+attributed solely to calibration. These are numerical and teaching-model
+physics experiments, not physical hardware validation.
+
+## Archived v0.2-v0.4 records
+
 The checked-in `examples/validated_run/` contains a newly computed run, not the original dissertation numbers.
 
 ## Completed checks

@@ -15,8 +15,8 @@ main{max-width:1250px;padding:30px 24px 45px;margin:auto}.intro{display:flex;jus
 <body>
 <header><div class="logo">ML</div><div><h1>Motion Learning Lab</h1><p>机械臂动力学 · 实际模拟状态回放</p></div><span class="badge" id="status">MuJoCo 仿真</span></header>
 <main>
-<div class="intro"><div><h2 id="title" aria-live="polite">机械臂轨迹跟踪</h2><p class="muted">两关节教学机械臂 · 固定高度的平面运动 · 同一关节 PD 控制器</p></div><div class="links"><a id="csv" href="robot_trace.csv" download>下载完整轨迹 CSV</a><a id="report" href="REPORT.md">查看运行报告</a></div></div>
-<div class="selectors"><label for="letter">字母<select id="letter" aria-label="选择字母"></select></label><label for="method">方法<select id="method" aria-label="选择方法"></select></label><p id="case-count"></p></div>
+<div class="intro"><div><h2 id="title" aria-live="polite">机械臂轨迹跟踪</h2><p class="muted" id="controller-description">两关节教学机械臂 · 固定高度的平面运动</p></div><div class="links"><a id="csv" href="robot_trace.csv" download>下载完整轨迹 CSV</a><a id="report" href="REPORT.md">查看运行报告</a></div></div>
+<div class="selectors"><label for="letter">字母<select id="letter" aria-label="选择字母"></select></label><label for="method">方法<select id="method" aria-label="选择方法"></select></label><label for="controller">控制器<select id="controller" aria-label="选择控制器"></select></label><p id="case-count"></p></div>
 <div class="cards">
 <div class="card"><span>末端跟踪 RMSE</span><strong><b id="rmse">—</b> <small>mm</small></strong></div>
 <div class="card"><span>最大跟踪误差</span><strong><b id="maximum">—</b> <small>mm</small></strong></div>
@@ -28,7 +28,8 @@ main{max-width:1250px;padding:30px 24px 45px;margin:auto}.intro{display:flex;jus
 <section class="panel"><h3>随时间变化的末端误差<span>mm</span></h3><canvas id="error" class="error" aria-label="欧氏跟踪误差随时间变化的图表"></canvas><div class="facts" id="facts"></div></section>
 </div>
 <div class="note" id="note"><p id="verdict"></p><p>这里回放的是 MuJoCo 积分产生的实际模拟状态。初始关节位于路径起点，此后通过限幅力矩驱动；结果来自完整物理采样。画面最多抽样 1,201 帧，完整数据见 CSV。</p></div>
-<p class="footer">本页验证一个已保存的轨迹复现案例。模型是教学用两关节平面臂，尚未对应真实机械臂参数。KMP 与 U-KMP 在这里使用相同规划和固定 PD，不能据此宣称不确定性感知控制优于基线。实机部署、传感器与通信影响、接触写字和障碍物场景需要另行验证。</p>
+<p class="footer" id="control-facts"></p>
+<p class="footer">本页验证已保存的轨迹复现案例。模型是教学用两关节平面臂，尚未对应真实机械臂参数。KMP 与 U-KMP 可以共享规划；控制器、扰动和运动时长在每个案例中记录。比较控制效果时同时检查误差、控制量和受力偏移。实机部署、传感器与通信影响、接触写字和障碍物场景需要另行验证。</p>
 </main>
 <script type="application/json" id="data">__ROBOT_DATA__</script>
 <script>
@@ -36,30 +37,37 @@ main{max-width:1250px;padding:30px 24px 45px;margin:auto}.intro{display:flex;jus
 const bundle=JSON.parse(document.getElementById('data').textContent);
 const cases=bundle.cases||[bundle],$=id=>document.getElementById(id);
 const letters=[...new Set(cases.map(c=>c.manifest.source_case.letter))].sort();
+const controllerId=c=>c.manifest.controller_id||'joint_pd';
+const controllerNames={joint_pd:'固定关节 PD',fixed_lqr:'固定权重 LQR',covariance_lqr:'协方差随动 LQR'};
+const multipleControllers=new Set(cases.map(controllerId)).size>1;
 let D,M,E,last,duration,index=0,playing=false,previous=null,playTime=0;
-function options(select,values,preferred){select.replaceChildren();for(const value of values){const option=document.createElement('option');option.value=value;option.textContent=value;select.append(option)}select.value=values.includes(preferred)?preferred:values[0];select.disabled=values.length<2}
+function options(select,values,preferred){select.replaceChildren();for(const value of values){const option=document.createElement('option');option.value=value;option.textContent=select.id==='controller'?(controllerNames[value]||value):value;select.append(option)}select.value=values.includes(preferred)?preferred:values[0];select.disabled=values.length<2}
 options($('letter'),letters,letters[0]);
 $('case-count').textContent=`已加载 ${letters.length} 个字母 · ${cases.length} 个案例`;
 function activate(){
-  D=cases.find(c=>c.manifest.source_case.letter===$('letter').value&&c.manifest.source_case.method===$('method').value);
+  D=cases.find(c=>c.manifest.source_case.letter===$('letter').value&&c.manifest.source_case.method===$('method').value&&controllerId(c)===$('controller').value);
   M=D.manifest;E=M.metrics;last=D.t.length-1;duration=D.t[last];index=0;setPlaying(false);
   $('seek').max=String(last);
   const name=`${M.source_case.letter} · ${M.source_case.method} · 机械臂仿真`;
   $('title').textContent=name;document.title=name;
+  $('controller-description').textContent=`两关节教学机械臂 · 固定高度的平面运动 · ${controllerNames[controllerId(D)]||controllerId(D)}`;
   $('status').textContent=E.tracking_passed?'仿真跟踪通过':'仿真未达阈值';
   for(const [id,value] of [['rmse',E.tracking_rmse_m*1000],['maximum',E.max_tracking_error_m*1000],['endpoint',E.endpoint_error_m*1000],['torque',E.peak_torque_nm]])$(id).textContent=value.toFixed(3);
   const artifacts=D.artifacts||{csv:'robot_trace.csv',report:'REPORT.md'};
-  $('csv').setAttribute('href',artifacts.csv);$('csv').download=`robot-${M.source_case.letter}-${M.source_case.method}.csv`;
+  $('csv').setAttribute('href',artifacts.csv);$('csv').download=`robot-${M.source_case.letter}-${M.source_case.method}${multipleControllers?'-'+controllerId(D):''}.csv`;
   $('report').setAttribute('href',artifacts.report);
   const facts=[['仿真时长',`${duration.toFixed(3)} s`],['物理采样',`${E.samples.toLocaleString()} 点 · ${(1/M.config.timestep).toFixed(0)} Hz`],['最大误差阈值',`${(M.config.tracking_tolerance*1000).toFixed(1)} mm`],['接触采样数',String(E.contact_samples)],['力矩饱和比例',`${(E.saturation_fraction*100).toFixed(2)}%`],['实际关节限速检查',E.actual_limits_satisfied?'通过':'未通过']];
   $('facts').replaceChildren();
   for(const [label,value] of facts){const row=document.createElement('div'),left=document.createElement('span'),right=document.createElement('strong');left.textContent=label;right.textContent=value;row.append(left,right);$('facts').append(row)}
   $('verdict').textContent=E.tracking_passed?'本次仿真通过预设的跟踪误差、接触、关节位置与速度/加速度检查。':'本次仿真未通过预设标准。请结合报告检查跟踪误差、接触和关节限制，失败数据已完整保留。';
   $('note').classList.toggle('failure',!E.tracking_passed);draw();
+  $('control-facts').textContent=E.torque_rms_nm===undefined?'':`力矩 RMS ${E.torque_rms_nm.toFixed(4)} N·m · 绝对机械功估计 ${E.absolute_mechanical_work_j.toFixed(4)} J · 扰动力 ${(M.config.disturbance_force||[0,0]).join(', ')} N · 恢复时间 ${E.recovery_time_s===null?'未施加扰动或未恢复':E.recovery_time_s.toFixed(3)+' s'}`;
 }
-function selectLetter(){const preferred=$('method').value;const methods=[...new Set(cases.filter(c=>c.manifest.source_case.letter===$('letter').value).map(c=>c.manifest.source_case.method))];options($('method'),methods,preferred);activate()}
+function selectMethod(){const available=cases.filter(c=>c.manifest.source_case.letter===$('letter').value&&c.manifest.source_case.method===$('method').value);options($('controller'),[...new Set(available.map(controllerId))],$('controller').value);activate()}
+function selectLetter(){const preferred=$('method').value;const methods=[...new Set(cases.filter(c=>c.manifest.source_case.letter===$('letter').value).map(c=>c.manifest.source_case.method))];options($('method'),methods,preferred);selectMethod()}
 $('letter').addEventListener('change',selectLetter);
-$('method').addEventListener('change',activate);
+$('method').addEventListener('change',selectMethod);
+$('controller').addEventListener('change',activate);
 function surface(canvas){const rect=canvas.getBoundingClientRect(),dpr=window.devicePixelRatio||1;canvas.width=Math.max(1,Math.round(rect.width*dpr));canvas.height=Math.max(1,Math.round(rect.height*dpr));const c=canvas.getContext('2d');c.scale(dpr,dpr);c.fillStyle='#fff';c.fillRect(0,0,rect.width,rect.height);return[c,rect.width,rect.height]}
 function line(c,points,color,width=2,dash=[]){if(!points.length)return;c.strokeStyle=color;c.lineWidth=width;c.setLineDash(dash);c.beginPath();points.forEach(([x,y],i)=>i?c.lineTo(x,y):c.moveTo(x,y));c.stroke();c.setLineDash([])}
 function dot(c,p,r,color){c.fillStyle=color;c.beginPath();c.arc(p[0],p[1],r,0,2*Math.PI);c.fill()}

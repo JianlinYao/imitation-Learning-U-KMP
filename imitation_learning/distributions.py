@@ -27,6 +27,9 @@ def marginal_blocks(joint: np.ndarray) -> np.ndarray:
 class Prediction:
     state: np.ndarray
     covariance: np.ndarray | None
+    # Observation noise for a NEW position observation, separate from the
+    # latent state covariance used for control (not divided by demo count).
+    position_noise_variance: float | np.ndarray = 0.0
 
     @property
     def position(self) -> np.ndarray:
@@ -39,6 +42,23 @@ class Observation:
     value: tuple[float, ...]
     dimensions: tuple[int, ...] = (0, 1)
     variance: float = 1e-5
+
+
+def observation_entries(observations, count):
+    """Validate observations and retain the last value for each state component."""
+    entries = {}
+    for obs in observations:
+        if not 0 <= obs.index < count:
+            raise ValueError("observation index is outside the prediction grid")
+        if len(obs.value) != len(obs.dimensions) or not obs.dimensions:
+            raise ValueError("one value is required for each observed dimension")
+        if not np.isfinite(obs.variance) or obs.variance <= 0:
+            raise ValueError("observation variance must be positive and finite")
+        for d, value in zip(obs.dimensions, obs.value):
+            if d not in (0, 1, 2, 3) or not np.isfinite(value):
+                raise ValueError("invalid observed dimension/value")
+            entries[4 * obs.index + d] = (value, obs.variance)
+    return entries
 
 
 class GaussianTrajectory:
@@ -60,18 +80,7 @@ class GaussianTrajectory:
         """
         if not observations:
             return Prediction(self.mean.copy(), self.marginals.copy())
-        entries = {}
-        for obs in observations:
-            if not 0 <= obs.index < len(self.mean):
-                raise ValueError("observation index is outside the prediction grid")
-            if len(obs.value) != len(obs.dimensions) or not obs.dimensions:
-                raise ValueError("one value is required for each observed dimension")
-            if not np.isfinite(obs.variance) or obs.variance <= 0:
-                raise ValueError("observation variance must be positive and finite")
-            for d, value in zip(obs.dimensions, obs.value):
-                if d not in (0, 1, 2, 3) or not np.isfinite(value):
-                    raise ValueError("invalid observed dimension/value")
-                entries[4 * obs.index + d] = (value, obs.variance)
+        entries = observation_entries(observations, len(self.mean))
         indices = np.array(sorted(entries), dtype=int)
         values = np.array([entries[i][0] for i in indices])
         noise = np.array([entries[i][1] for i in indices])

@@ -1,0 +1,8 @@
+{
+  "prediction_records_rechecked": 1575,
+  "disjoint_partitions": 40,
+  "calibration_records": 320,
+  "demo_robot_cases": 40,
+  "force_study_cases": 16,
+  "all_checks_passed": true
+}
