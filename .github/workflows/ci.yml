@@ -66,7 +66,16 @@ jobs:
       - name: Install simulation support
         run: python -m pip install -e ".[simulation]"
       - name: Kinematics and actual MuJoCo rollout tests
-        run: python -m unittest discover -s tests -p test_robot.py -v
+        run: python -m unittest discover -s tests -p "test_robot*.py" -v
+      - name: Real one-command workflow and verified restart
+        run: python -m unittest discover -s tests -p test_workflow.py -v
+      - name: Windows double-click launcher without opening a browser
+        if: runner.os == 'Windows'
+        shell: cmd
+        env:
+          DEMO_NO_OPEN: '1'
+          DEMO_NO_PAUSE: '1'
+        run: run_demo.bat --letters A --methods KMP U-KMP --output outputs/launcher-ci
       - name: Simulate a saved learning example
         run: python -m imitation_learning simulate examples/validated_run --letter G --method KMP --output outputs/robot-ci
       - name: Combine existing robot logs without rerunning physics
@@ -76,7 +85,13 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: robot-simulation-${{ matrix.os }}
-          path: outputs/robot-ci/
+          path: |
+            outputs/robot-ci/
+            outputs/launcher-ci/workflow.json
+            outputs/launcher-ci/learning/*.csv
+            outputs/launcher-ci/learning/*.json
+            outputs/launcher-ci/robot/summary.csv
+            outputs/launcher-ci/robot/dashboard.html
           if-no-files-found: warn
           retention-days: 7
 

@@ -92,7 +92,11 @@ def make_report(output: Path | str):
              f"- Status: **{manifest['status']}**", f"- Trials: {manifest['valid_trials']} valid / {manifest['expected_trials']} expected; {manifest['failed_trials']} errors.",
              f"- Partial cross-validation: {manifest['partial_cross_validation']}", "- Planned trajectories and closed-loop control are evaluated separately.",
              "- KMP and U-KMP have the same planned mean/covariance; their planning errors may be identical.",
-             "- Intervals are nominal marginal Gaussian bands; empirical coverage is reported without a calibration guarantee.",
+             "- GP position bands include per-demo observation noise; controllers use the latent state covariance.",
+             "- Calibration, when enabled, reserves whole outer-training demos from both model and scaler fit. It is empirical marginal interval inflation, not a trajectory-level coverage guarantee.",
+             f"- KMP adaptation mode: {manifest['config'].get('model', {}).get('kmp_adaptation', 'gaussian')}",
+             f"- Reproduction RMSE / training span threshold: {manifest['config'].get('reproduction_rmse_tolerance_fraction', 'legacy endpoint-only')}",
+             f"- Missing-gap RMSE / training span threshold: {manifest['config'].get('missing_gap_tolerance_fraction', 'legacy endpoint-only')}",
              "- No outlier filtering or preferred-method selection is applied.", ""]
     for scenario in scenarios:
         lines += [f"## {scenario.capitalize()}", "", "| Method | Valid / total | RMSE | End error | Jerk | Gap RMSE | Collision rate | Inference ms |",
@@ -101,6 +105,16 @@ def make_report(output: Path | str):
             lines.append(f"| {row['method']} | {int(row['valid_trials'])} / {int(row['total_trials'])} | "
                          + " | ".join(_pm(row, m) for m in ("rmse", "end_err", "jerk", "gap_rmse", "collision", "infer_ms")) + " |")
         lines.append("")
+    if 'calibrated_coverage95_mean' in summary:
+        lines += ['## Predictive uncertainty', '',
+                  '| Scenario | Method | Raw coordinate coverage | Gap coverage | Calibrated coverage | Calibrated gap coverage | Marginal position NLPD | Task success |',
+                  '|---|---|---:|---:|---:|---:|---:|---:|']
+        for _, row in summary.iterrows():
+            lines.append(f"| {row['scenario']} | {row['method']} | " + ' | '.join(_pm(row, key) for key in
+                ('coverage95','gap_coverage95','calibrated_coverage95','calibrated_gap_coverage95','nlpd','task_success')) + ' |')
+        lines += ['', 'Raw and calibrated coverage are recorded separately; a nominal 95% label is not proof of calibration. '
+                  'No held-out test residual is used to fit inflation. Obstacle detours have no calibrated band because '
+                  'the original demonstration is not a target distribution for a deliberate detour. See calibration.json and splits.json.', '']
     lines += ["## Interpretation", "", "Obstacle RMSE measures deviation from the original demonstration, which can increase for a valid detour. Read it alongside continuous clearance, goal reach and collision rate. DMP is an endpoint-only baseline with no obstacle coupling or gap conditioning.", "",
               "Training is performed once per method/fold and its measured cost is repeated on the corresponding trial rows; do not sum these repeated costs. Inference uses one warmup followed by the median of the configured repeats. Adaptation includes constraint construction and obstacle repair. Timing depends on the recorded runtime and hardware.", "",
               "Control ablation uses the same predicted reference, unit-mass system, input cost and acceleration disturbance for fixed-Q and covariance-aware LQR. It is a separate numerical experiment, not physical robot validation.", "",

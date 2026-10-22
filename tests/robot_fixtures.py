@@ -8,7 +8,7 @@ import pandas as pd
 from imitation_learning.robot import RobotConfig
 
 
-def write_robot_fixture(folder, letter="A", method="KMP", error_m=.001):
+def write_robot_fixture(folder, letter="A", method="KMP", error_m=.001, controller=None):
     folder.mkdir(parents=True, exist_ok=True)
     t = np.arange(501) * .002
     target = np.column_stack([.4 + .03 * np.sin(2 * np.pi * t), .02 * np.cos(2 * np.pi * t)])
@@ -22,7 +22,9 @@ def write_robot_fixture(folder, letter="A", method="KMP", error_m=.001):
     manifest = {"robot": "educational_planar_2r", "stage": "synthetic UI test fixture, not a physics result",
                 "status": "completed", "source_case": {"letter": letter, "method": method,
                 "scenario": "reproduction", "fold": 0, "demo": 0},
-                "config": asdict(RobotConfig()), "metrics": metrics}
+                "config": asdict(RobotConfig(controller=controller or 'joint_pd')), "metrics": metrics}
+    if controller is not None:
+        manifest['controller_id'] = controller
     (folder / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False), encoding="utf-8")
     np.savez_compressed(folder / "robot_trace.npz", t=t, target=target, tip=tip, elbow=elbow, error_m=error)
     pd.DataFrame({"time_s": t, "error_m": error}).to_csv(folder / "robot_trace.csv", index=False)

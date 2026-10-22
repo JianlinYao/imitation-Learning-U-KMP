@@ -1,3 +1,5 @@
+> v0.5: for a complete restartable Windows demo, double-click `run_demo.bat`, or run `python -m imitation_learning demo`. The resulting `outputs/demo/robot/dashboard.html` contains all letters/methods, with shared per-letter durations and actual task-space LQR / covariance-aware LQR torque control. Original single-case commands below default to fixed joint PD. See [research improvements](RESEARCH_IMPROVEMENTS.md) for controller comparisons, force pulses and boundaries.
+
 # 机械臂动力学仿真
 
 此阶段将已学习的二维路径交给 MuJoCo 中的教学用两关节平面机械臂。它验证坐标映射、逆运动学、时间参数化、限幅力矩控制和实际模拟状态记录。它不是实机验证，也不是经过辨识的工业机械臂数字孪生。

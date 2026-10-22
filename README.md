@@ -4,7 +4,30 @@
 
 新增的 `imitation_learning/` 是统一运行入口。`Imitationlearning-KMP/` 和 `2Dletters/` 中原有 Notebook 保留作历史研究记录；其中部分旧评测单元包含占位实现、不同实验协议或结果过滤，不作为新版评测入口。
 
-> 新版结果由程序重新计算，不表示已经复现论文原表格中的数字。KMP 与 U-KMP 的规划均值可以相同；U-KMP 的不确定性感知控制效果在单独的 LQR 实验中评估。项目目前是二维数值实验，没有实机安全验证。
+> 新版结果由程序重新计算，不表示已经复现论文原表格中的数字。KMP 与 U-KMP 的规划均值可以相同；U-KMP 的不确定性感知控制效果在单独的 LQR 实验中评估。项目包含二维学习评测与 MuJoCo 教学臂物理仿真，尚无实体机械臂验证。
+
+## Windows 一键演示（v0.5）
+
+下载最新版，解压后进入同时有 `pyproject.toml` 和 `run_demo.bat` 的文件夹，**双击 `run_demo.bat`**。脚本安装本地项目及仿真依赖，生成 A–H、五种方法的结果，并打开可切换字母、方法、控制器的合并页面。
+
+也可在项目根目录依次执行：
+
+```powershell
+python -m pip install -e ".[simulation]"
+python -u -m imitation_learning demo
+```
+
+完成后打开 `outputs/demo/robot/dashboard.html`。再次运行相同命令会验证输入与配置，复用已完成的学习折和物理仿真。数据、配置或计算源码改变时，请使用新的 `--output` 目录。旧的 `outputs/full` 等文件夹保留。
+
+演示配置运行一个测试折、80 个采样点，明确记录为部分评测。`auto` 控制器为普通方法使用固定权重任务空间 LQR，为 U-KMP 使用协方差随动 LQR；同一字母的各方法使用共同运动时长。仿真结果保留实际误差、控制量与失败状态，不预设 U-KMP 在所有指标上获胜。
+
+完整新研究配置：
+
+```bash
+python -m imitation_learning run --config configs/research.json --output outputs/research
+```
+
+v0.5 新增参考点更新 KMP、独立示教校准、概率评分、轨迹内误差成功阈值及物理控制对照。实现和研究边界见 [研究完善说明](docs/RESEARCH_IMPROVEMENTS.md)。
 
 ## 快速开始
 
@@ -92,7 +115,7 @@ python -m imitation_learning simulate examples/validated_run --letter G --method
 
 输入是一次已保存的轨迹复现案例，不是重新训练。坐标按训练参考统一缩放成米，逆运动学得到关节轨迹，再按速度/加速度限制重新定时；默认至少 8 秒。MuJoCo 实际积分产生后续状态，固定 PD 发送限幅力矩。失败结果也保留，未达到跟踪标准时退出码为 1。
 
-这一新增阶段是**教学模型的动力学仿真**，没有对应真实厂商机械臂，也没有验证实机或 U-KMP 的不确定性感知控制效果。实现、输出单位、通过标准和实机迁移条件见 [机械臂仿真说明](docs/ROBOT_SIMULATION.md)。
+上述单案例命令默认使用固定关节 PD。v0.5 的 `demo` 或 `--controller auto` 可使用任务空间 LQR 和协方差随动 LQR；这仍是**教学模型的动力学仿真**，没有对应真实厂商机械臂或验证实机。实现、输出单位、通过标准和实机迁移条件见 [机械臂仿真说明](docs/ROBOT_SIMULATION.md)。
 
 ## 完整实验
 
@@ -109,7 +132,7 @@ python -m imitation_learning run --letters G H --output outputs/gh
 python -m imitation_learning run --letters G --methods GP KMP U-KMP --output outputs/kernel
 ```
 
-输出目录必须为空，程序不会覆盖已有实验。更改参数后使用新目录。配置文件可设置基函数数量、核长度、GMM 分量数、参考点数、遮挡范围、观测数量、障碍半径和修复次数。
+首次输出目录必须为空；相同输入、配置、环境和源码可加 `--resume` 继续已完成的折。更改参数后使用新目录。配置文件可设置基函数数量、核长度、GMM 分量数、参考点数、遮挡范围、观测数量、障碍半径和修复次数。
 
 ## 输出与指标
 
@@ -121,13 +144,15 @@ python -m imitation_learning run --letters G --methods GP KMP U-KMP --output out
 | `summary.csv` | 逐任务/方法的均值、样本标准差、有效数、失败数 |
 | `fold_metrics.csv` | 逐字母/折/方法的均值；用于检查折间稳定性 |
 | `control_ablation.csv` | 固定 Q 与协方差感知 LQR 的独立数值对比 |
+| `calibration.json` | 独立校准示教编号、区间膨胀系数及校准范围 |
+| `checkpoint.json` | 原子保存的完整折检查点，用于恢复 |
 | `effective_config.json` | 本次运行的完整有效配置 |
 | `manifest.json` | 输入/源码哈希、环境版本、随机种子、计数和时间 |
 | `splits.json` | 每折原始示教编号、训练集归一化参数、GMM 训练信息 |
 | `predictions/` | 每次预测的 NPZ：时间、真值、位置/速度、边际协方差、遮挡标记 |
 | `figures/` | 根据本次结果生成的轨迹图与误差图 |
 
-统一计算坐标 RMSE、欧氏终点误差、位置三阶时间导数的平均范数（Jerk）、缺失区间 RMSE，以及训练、适配和预测耗时。概率方法另外记录名义 95% 区间的实际覆盖率。DMP 的协方差相关指标为空，不编造区间。
+统一计算坐标 RMSE、欧氏终点误差、位置三阶时间导数的平均范数（Jerk）、缺失区间 RMSE，以及训练、适配和预测耗时。概率方法另外记录原始/经验校准覆盖率、区间宽度、位置边际 NLPD 和二维椭圆覆盖率。启用校准时整条校准示教不参与模型和归一化拟合；经验校准不保证整条轨迹覆盖率。DMP 的协方差相关指标为空，不编造区间。
 
 避障还记录整条折线路径的最小间距、碰撞、是否满足安全余量和是否到达目标。绕行可能增加对原示教的 RMSE，因此不能只靠 RMSE 判断避障好坏。
 
@@ -137,7 +162,7 @@ python -m imitation_learning run --letters G --methods GP KMP U-KMP --output out
 - KMP 的 GMM/GMR 参考均值与完整位置/速度协方差在每个训练折内重新生成。新版不读取现有的 `ref*.mat`。
 - DMP 从所有训练示教联合拟合强迫项，使用正确的弹簧阻尼符号与数值积分；它作为只接收起终点的基线，不假装具备避障耦合或片段条件化。
 - ProMP 学习基函数权重的高斯分布；GP 使用全部示教。GP 对同时间输入的重复观测进行精确压缩，训练计算和计时真实执行。
-- GP/ProMP/KMP 使用学习到的联合轨迹分布接收位置或位置/速度观测。KMP 的条件化实现采用高斯后验更新，具体区别见方法说明。
+- GP/ProMP/KMP 使用学习到的联合轨迹分布接收位置或位置/速度观测。KMP 支持参考点替换/追加模式及高斯后验模式；`research.json` 使用前者，历史 `benchmark.json` / `quick.json` 显式保留后者。
 - 缺失补全默认遮挡测试轨迹的中间 20%；先遮挡，再分别平滑两侧可见片段。被遮挡位置及其导数不进入输入。
 - 障碍由训练参考轨迹定义；所有方法面对相同障碍。适配方法使用同一几何途经点政策与有界修复预算。失败也保存，不过滤差结果。
 - KMP 与 U-KMP 规划层使用同一公式和参数。U-KMP 另通过预测协方差构造 LQR 状态代价；控制实验比较同一参考、同一系统、同一输入代价和同一外部扰动。

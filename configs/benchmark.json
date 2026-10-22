@@ -20,6 +20,7 @@
   "save_predictions": true,
   "control_ablation": true,
   "model": {
+    "kmp_adaptation": "gaussian",
     "basis_functions": 40,
     "ridge": 0.00001,
     "length_scale": 0.1,

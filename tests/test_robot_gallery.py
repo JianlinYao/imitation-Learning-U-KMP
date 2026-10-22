@@ -1,5 +1,6 @@
 """Existing logs can be combined without MuJoCo or changes to source files."""
 from hashlib import sha256
+import io
 import json
 from pathlib import Path
 import re
@@ -27,7 +28,10 @@ class RobotGalleryTests(unittest.TestCase):
             write_robot_fixture(source / "B", "B", error_m=.02)
             before = {path: sha256(path.read_bytes()).hexdigest() for path in source.rglob("*") if path.is_file()}
             output = root / "浏览页面" / "combined.html"
-            with patch("imitation_learning.robot.rollout", side_effect=AssertionError("must reuse logs")):
+            # Exercise Chinese paths under a strict Western Windows output stream.
+            with (patch("imitation_learning.robot.rollout", side_effect=AssertionError("must reuse logs")),
+                  io.TextIOWrapper(io.BytesIO(), encoding="cp1252", errors="strict") as console,
+                  patch("sys.stdout", console)):
                 result = build_robot_gallery(source, output)
             data = read_payload(output)
             self.assertEqual(result["letters"], ["A", "B"])
